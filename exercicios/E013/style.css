@@ -1,0 +1,16 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{    color: yellow;
+    text-decoration: underline;}
+h2{    color: blue;
+    font-style: italic;}
+
+body{    background-color: rgba(127, 255, 212, 0.76);}
+
+.linker{
+    text-align: center;
+}
