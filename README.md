@@ -1,2 +1,2 @@
 # Hello, World!
- Este é o meu primeiro repositório! 
+ This is my current main repository for studying...
