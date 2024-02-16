@@ -117,3 +117,8 @@ p> a{
 p > a:hover{
     text-decoration: underline;
 }
+
+.extra{
+    padding: 2em;
+    background-color: #35BF73;
+}
