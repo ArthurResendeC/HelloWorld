@@ -13,6 +13,7 @@
 
 main{
     background-color: #84E1AD;
+    overflow: hidden;
 }
 
 header{
@@ -51,18 +52,18 @@ header > nav > a:hover{
 
 footer{
     background-color: #20603D;
-    padding: 1em;
+    padding: 0.5em;
     text-align: center;
     color: #ffffff;
 }
 
-footer > p >a{
+footer >a{
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
 
-footer > p > a:hover{
+footer > a:hover{
     text-decoration: underline;
     color: #84E1AD;
 }
@@ -71,12 +72,8 @@ section{
     background-color: #fff;
     margin: auto;
     width: 55em;
+    height: 100%;
     text-align: justify;
-}
-
-section > article > p{
-    margin: 1em;
-    padding: 1em;
 }
 
 h2{
@@ -94,8 +91,10 @@ h3{
     background-image: linear-gradient(to left, #ffffff, #95e0b6);
 }
 
-article > p{
+p{
     text-indent: 2em;
+    margin: 1em;
+    padding: 1em;
 }
 
 .images{
@@ -103,7 +102,9 @@ article > p{
     justify-content: center;
 }
 
-.iframe{
+iframe{
+    position: relative;
+    display: block;
     padding: 2em;
     background-color: #35BF73;
 }
@@ -120,5 +121,13 @@ p > a:hover{
 
 .extra{
     padding: 2em;
+    background-color: #beebd1;
+    width: 60vw;
+    margin: auto;
+}
+
+.extra > h4{
     background-color: #35BF73;
+    padding: 0.5em;
+    border-radius: 0.5em 0.5em 0 0;
 }
