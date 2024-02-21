@@ -13,16 +13,21 @@
     --fontetexto: 'Sriracha', cursive;
 }
 
+body{
+    height: 100vh;
+}
+
 header{
     background-color: #000000;
     padding: 2rem;
 }
+
 h1{
     font-family: var(--fontetitulo);
     text-align: center;
     font-variant: small-caps;
     padding: 0.5rem;
-    font-size: 8rem;
+    font-size: 9vw;
     color: #ffffff;
 }
 
@@ -65,13 +70,15 @@ article > p{
     background-color: rgba(0, 0, 0, 0.486);
     color: #ffffff;
     padding-right: 1rem;
+    text-shadow: .1rem .1rem 0rem black;
     max-width: 12.5em;
     display: inline-block;
     margin-block-start: 2em;
     margin-block-end: 2em;
     margin-inline-start: 1em;
     margin-inline-end: 0em;
-}
+    border-radius: 1rem;
+}   
 
 #paper{
     background-image: url('./imagens/background002.jpg');
