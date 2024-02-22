@@ -1,4 +1,12 @@
-td{
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+td, th{
     border: 1px solid black;
     padding: .5rem;
     text-align: left;
@@ -6,7 +14,41 @@ td{
 }
 
 table{
-    width: 15rem;
-    height: 15rem;
+    width: 30rem;
     border-collapse: collapse;
+    position: relative;
+    margin: auto;
+}
+
+thead, tfoot{
+    background-color: darkgray;
+    color: #ffffff;
+}
+
+thead > tr > th{
+    position: sticky;
+    top: -.1rem;
+    background-color: darkgray;
+}
+
+.num{
+    text-align: right;
+}
+
+caption{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    background-color: lightgray;
+    text-align: center;
+    border-radius: .3rem .3rem 0rem 0rem;
+    border-collapse: collapse;
+}
+
+#pop{
+    width: 2.5rem;
+}
+
+tbody > tr:nth-child(even) {
+    background-color: lightgray;
 }
