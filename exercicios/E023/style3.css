@@ -1,0 +1,39 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table{
+    border-collapse: collapse;
+    width: 40rem;
+    margin: auto;
+}
+caption{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+td, th{
+    border: .1rem solid black;
+    padding: .3rem;
+    text-align: center;
+}
+
+th{
+    background-color: #424958b4;
+    color: #fff;
+}
+
+.area{
+    background-color: #fff;
+    color: black;
+}
+.avrg{
+    background-color: #424958b4;
+    color: white;
+    font-weight: bold;
+}
+
+.avrgt{
+    text-align: left;
+}
