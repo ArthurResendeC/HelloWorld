@@ -30,14 +30,12 @@ main{
     transform: translate(-50%, -50%);
     background-image: url('../images/frame-iphone.png');
     background-repeat: no-repeat;
-    background-size: contain;
 }
 
 #iframe{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: 80px;
+    left: 22px;
 }
 
 .buttons{
@@ -45,8 +43,17 @@ main{
 }
 
 .iconimg{
-    padding: .5rem;
-    width: 4rem;
+    margin: .5rem;
+    width: 2.8rem;
     border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+}
+
+img:hover{
+    border: 2px solid rgba(255, 255, 255, 0.616);
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.589);
+    transition: transform 80ms, border 20ms;
 }
 
