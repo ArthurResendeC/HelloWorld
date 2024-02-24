@@ -6,24 +6,38 @@
 }
 
 body{
+    height: 100vh;
+    width: 100vw;
     background-image: url('../images/fundo-madeira.jpg');
     background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.cell{
-    position: absolute;
-    width: 16rem;
-    right: 50%;
-    top: 17%;
-    transform: translate(50%);
+main{
+    height: 100vh;
+    position: relative;
 }
 
-.cellframe{
-    width: 19rem;
+
+#phoneframe{
     position: absolute;
-    right: 50%;
-    top: 5%;
-    transform: translate(50%);
+    width: 311px;
+    height: 627px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/frame-iphone.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#iframe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .buttons{
