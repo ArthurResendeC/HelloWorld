@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Teste de formulário</h1>
+    <form autocomplete="on" action="" method="post">
+        <p>
+            <label for="iusu">Usuário: </label>
+            <input required type="text" name="usu" id="iusu" minlength="5" maxlength="15" size="15" placeholder="nome de usuário" autocomplete="username">
+        </p>
+        <p>
+            <label for="isenha">Senha: </label>
+            <input required type="password" name="senha" id="isenha" minlength="8" size="17" placeholder="mín. 8 caracteres" autocomplete="current-password">
+        </p>
+        <p>
+            <input type="submit" value="Login">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
