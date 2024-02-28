@@ -8,7 +8,41 @@
     <link rel="stylesheet" href="styles/landscape.css" media="screen and (orientation: portrait)">
     <link rel="stylesheet" href="style/portrait.css" media="screen and (orientation: landscape)">
     <style>
+        /* Declarações gerais */
+            *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+        html, body{
+            width: 100vw;
+            height: 100vh;
+            background-color: darkslategrey;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        h1{
+            color: #fff;
+            padding: 1rem;
+            text-shadow: 1px 1px 0px black;
+        }
+            /* Declarações retrato */
+            @media screen and (orientation: portrait) {
+                body{
+                    background-image: url('../images/cev-portrait.jpg');
+                    background-position: center bottom;
+                }
+        }
         
+        /* Declarações paisagem */
+        @media screen and (orientation: landscape) {
+            body{
+                background-image: url('../images/cev-landscape.jpg');
+                background-position: left bottom;
+            }
+        }
     </style>
 </head>
 <body>
