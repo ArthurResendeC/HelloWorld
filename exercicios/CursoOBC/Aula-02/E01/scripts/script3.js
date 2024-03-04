@@ -10,5 +10,5 @@ let num4 = num1 - num2;
 let num5 = num1 / num2;
 let num6 = num1 * num2;
 
-alert(`A soma entre os dois números é ${num3}!\nO resto da operação entre os dois números é ${num4}!\nO quociente da operação entre os dois números é ${num5}\nO produto da operação entre os dois números é ${num6}!`);
+alert(`${num1} + ${num2} = ${num3}!\n${num1} - ${num2} = ${num4}!\n${num1} / ${num2} = ${num5}\n${num1} * ${num2} = ${num6}!`);
 }
