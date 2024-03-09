@@ -2,18 +2,14 @@
     img{
         width: 12.5vw;
     }
-
     body{
-        background-image: linear-gradient(to top,var(--violet), var(--pinker));
+        background: rgb(34,193,195);
+background: linear-gradient(315deg, rgba(34,193,195,1) 0%, rgba(253,45,185,1) 100%);
     }
-    h1{
-        font-size: 2rem;
+    li{
+        max-width: 40vw;
     }
     .text{
-    font-size: 1.2rem;
-    }
-
-    li{
         max-width: 40vw;
     }
 }
