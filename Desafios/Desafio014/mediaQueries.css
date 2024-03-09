@@ -1,0 +1,20 @@
+@media screen and (min-width: 668px) {
+    img{
+        width: 12.5vw;
+    }
+
+    body{
+        background-image: linear-gradient(to top,var(--violet), var(--pinker));
+    }
+    h1{
+        font-size: 2rem;
+    }
+    .text{
+    font-size: 1.2rem;
+    }
+
+    li{
+        max-width: 40vw;
+    }
+}
+

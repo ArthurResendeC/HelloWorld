@@ -1,5 +1,8 @@
 let pessoa = {
   idade: 28,
   nome: "Isaac",
+  endereco: { rua: "Professor Pedro", numero: "839"}
 }
-console.log(pessoa.nome)
+alert(pessoa.nome)
+console.log(pessoa.endereco)
+alert(pessoa.endereco.rua)
