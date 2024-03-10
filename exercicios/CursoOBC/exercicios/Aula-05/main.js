@@ -1,37 +1,28 @@
-//Inicializa os arrays para armazenar os números e os pesos
-const numeros = [];
+const valores = [];
 const pesos = [];
 
-//loop para solicitar números e pesos
-while (true){
-    const numero = parseFloat(prompt(`Digite um número (ou deixe em branco para encerrar):`))
-    
-    if (isNaN(numero)){
-        break;
-    } 
-    const peso = parseFloat(prompt(`Insira o peso para o número ${numero}:`))
-    if (isNaN(peso)){
-        alert(`Por favor insira um peso válido!`)
-    }
-    else{        
-        numeros.push(numero);
-        pesos.push(peso)        
-    }
+let valor = prompt("Insira um valor:");
+let peso = prompt("Insira o peso do valor:");
+
+while( valor !== "" && peso !== "") {
+    valores.push(parseFloat(valor));
+    pesos.push(parseFloat(peso));
+
+    valor = prompt(`Digite um valor ou confirme em branco para finalizar`);
+    peso = prompt(`Insira o peso do valor ou confirme em branco para finalizar`);
 }
 
-if (numeros.length === 0) {
-    alert("Nenhum número foi inserido.Encerrando...");
-}   else {
+let somaProdutos = 0;
+let somaPesos = 0;
 
-    let somaNotas = 0;
-    let somaPesos = 0;
 
-    for (let i =0; i < numeros.length; i++) {
-        somaNotas += numeros[i] * pesos[i];
-        somaPesos += pesos[i];
-    }
-
-    const mediaPonderada = somaNotas / somaPesos;
-
-    alert(`A média ponderada é ${mediaPonderada.toFixed(2)}`)
+for (let i = 0; i < valores.length; i++) {
+    somaProdutos += valores[i] * pesos[i];
+    somaPesos += pesos[i];
 }
+
+const mediaPonderada = somaProdutos / somaPesos;
+console.log(somaProdutos);
+console.log(somaPesos);
+
+alert(`A média ponderada é ${mediaPonderada.toFixed(2)}`);
