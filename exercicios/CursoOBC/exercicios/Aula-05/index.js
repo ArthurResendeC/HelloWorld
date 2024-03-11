@@ -5,7 +5,7 @@ const carro = {
     velocidade: 0,
 }
 
-function aumentarVelocidade(carro, velocidade){
+function modificarVelocidade(carro, velocidade){
     const velocidadeConst = carro.velocidade = velocidade
     return velocidadeConst
 }
@@ -20,5 +20,5 @@ function adcPassageiro(carro, passageiros){
     console.log(carro);
 }
 
-aumentarVelocidade(carro, 1);
-adcPassageiro(carro, 2);
+modificarVelocidade(carro, 0);
+adcPassageiro(carro, 6);
