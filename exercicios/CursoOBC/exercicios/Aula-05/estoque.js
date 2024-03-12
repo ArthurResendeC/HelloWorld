@@ -65,8 +65,6 @@ function adicionarProdutos(){
     exibirMenu()
 }
 
-const listaDeProdutos = [];
-
 function listarProdutos() {
     const listaDeProdutos = produtos ?? [];
 
@@ -77,9 +75,19 @@ function listarProdutos() {
         return `Nome: ${produto.nome}\nQuantidade: ${produto.quantidade}`;
     }).join("\n\n");
 
-    alert(mensagem);
+    alert(`Lista de produtos:\n\n` + mensagem);
     }
 
+    exibirMenu();
+}
+
+function alterarQtdProdutos(){
+    alert(`Essa 'feature' ainda não foi adicionada`);
+    exibirMenu();
+}
+
+function excluirItem(){
+    alert(`Essa 'feature' ainda não foi adicionada`);
     exibirMenu();
 }
 
