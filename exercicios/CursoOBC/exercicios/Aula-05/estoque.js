@@ -27,7 +27,7 @@ function exibirMenu(){
             break;
             case 3: alterarQtdProdutos();
             break;
-            case 4: excluirItem();
+            case 4: removerItem();
             break;
             case 5: sairDoMenu();
             break
@@ -72,7 +72,7 @@ function listarProdutos() {
     alert("Nenhum produto cadastrado!");
     } else {
     const mensagem = listaDeProdutos.map((produto) => {
-        return `Nome: ${produto.nome}\nQuantidade: ${produto.quantidade}`;
+        return `Nome: ${produto.nome}\nQntd: ${produto.quantidade}`;
     }).join("\n\n");
 
     alert(`Lista de produtos:\n\n` + mensagem);
@@ -82,12 +82,54 @@ function listarProdutos() {
 }
 
 function alterarQtdProdutos(){
-    alert(`Essa 'feature' ainda não foi adicionada`);
+    const nomeDoProduto = prompt(`Digite o nome do produto o qual você deseja alterar a quantidade:`)
+
+    let produtoEncontrado = null;
+    for(let i = 0; i < produtos.length; i++){
+        if(produtos[i].nome === nomeDoProduto){
+            produtoEncontrado = produtos[i];
+        }
+    }
+
+    if(!produtoEncontrado){
+        alert(`O produto ${nomeDoProduto} não foi encontrado!`);
+        return
+    }
+
+    let novaQuantidade = parseInt(prompt(`Digite a nova quantidade para o "${nomeDoProduto}":`));
+    if(isNaN(novaQuantidade)){
+        alert(`A quantidade deve ser um número!`)
+    } else{
+
+    produtoEncontrado.quantidade = novaQuantidade;
+    alert(`A quantidade do produto "${nomeDoProduto}" foi alterada para ${novaQuantidade} com sucesso!`)
+    listarProdutos();
+    exibirMenu();
+    }
+}
+
+function removerItem() {
+    const nomeDoProduto = prompt("Digite o nome do produto que você deseja remover: ");
+
+    let indiceDoProduto = -1;
+
+    // Encontrar o índice do item a ser removido
+    for (let i = 0; i < produtos.length; i++) {
+    if (produtos[i].nome === nomeDoProduto) {
+        indiceDoProduto = i;
+        break;
+    }
+}
+
+    // Remover o item da lista
+    if (indiceDoProduto !== -1) {
+    produtos.splice(indiceDoProduto, 1);
+    alert(`O produto "${nomeDoProduto}" foi removido com sucesso!`);
+    } else {
+    alert(`O produto "${nomeDoProduto}" não foi encontrado!`);
+    }
+    listarProdutos();
     exibirMenu();
 }
 
-function excluirItem(){
-    alert(`Essa 'feature' ainda não foi adicionada`);
-    exibirMenu();
-}
 
