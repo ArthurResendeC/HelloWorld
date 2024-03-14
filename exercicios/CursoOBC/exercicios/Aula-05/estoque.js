@@ -122,7 +122,7 @@ function removerItem() {
 }
 
     // Remover o item da lista
-    if (indiceDoProduto !== -1) {
+    if (indiceDoProduto > 0) {
     produtos.splice(indiceDoProduto, 1);
     alert(`O produto "${nomeDoProduto}" foi removido com sucesso!`);
     } else {

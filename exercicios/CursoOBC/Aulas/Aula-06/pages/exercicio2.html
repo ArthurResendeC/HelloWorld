@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos</title>
+</head>
+<body>
+    <h2>Cadastrar Novo Jogo</h2>
+    <form id="cadastrarJogo" autocomplete="off">
+        <label for="nome">Nome do jogo:</label>
+        <input type="text" name="nome" id="inome" required placeholder="Elden Ring" minlength="4" maxlength="25"  >
+        <br><br>
+        <label for="ano">Ano de lançamento:</label>
+        <input type="number" name="ano" id="iano" required minlength="4" placeholder="2022" min="1900" max="2026">
+        <br><br>
+        <label for="genero">Gênero:</label>
+        <input type="text" name="genero" id="igenero" required placeholder="RPG">
+        <br><br>
+        <input type="submit" value="Adicionar Jogo">
+    </form>
+    <h2>Lista de Jogos</h2>
+    <ul id="listaDeJogos"></ul>
+    <script src="exercicio2.js"></script>
+</body>
+</html>
