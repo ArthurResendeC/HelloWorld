@@ -14,7 +14,7 @@ function adicionarLi(jogo){
     btnRemover.innerText = "Remover jogo"
     btnRemover.addEventListener("click", function(){
         const liParaRemover = document.getElementById(liElement.id)
-        liParaRemover.remove()
+        liParaRemover.remove();
         
         liElement.appendChild(btnRemover)
     })
