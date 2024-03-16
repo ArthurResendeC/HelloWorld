@@ -30,10 +30,8 @@ form.addEventListener("submit", function(event){
   checkbox.addEventListener("change", function() {
     if (checkbox.checked) {
       checkboxLabel.innerHTML = `<del>${checkboxLabel.textContent}</del>`;
-      
     } else {
       checkboxLabel.innerHTML =  `${checkboxLabel.textContent}`
-      
     }
   });
 })
