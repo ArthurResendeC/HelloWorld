@@ -5,7 +5,6 @@ function toKebabCase(str){
 const form = document.getElementById("addTask")
 const taskList = document.getElementById("taskList")
 
-const task = [];
 form.addEventListener("submit", function(event){
   event.preventDefault();
 
@@ -31,8 +30,10 @@ form.addEventListener("submit", function(event){
   checkbox.addEventListener("change", function() {
     if (checkbox.checked) {
       checkboxLabel.innerHTML = `<del>${checkboxLabel.textContent}</del>`;
+      
     } else {
       checkboxLabel.innerHTML =  `${checkboxLabel.textContent}`
+      
     }
   });
 })
