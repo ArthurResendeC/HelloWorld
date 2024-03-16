@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The homepage of Starbucks">
+    <title>Starbucks Iced Coffee</title>
+</head>
+<body>
+    <aside class="circulo">
+    </aside>
+    <a href="https://www.starbucks.com" rel="noreferrer noopener">
+        <button class="logotype" id="logotype"><img src="./Images/logo.png" alt="logo Starbucks" class="logo"></button>
+    </a>
+    <section class="conteudo">
+        <article class="caixa_texto">
+            <h2> It's not just coffee, it's a <span>Starbucks</span> </h2>
+            <p> The iced coffee from Starbucks is a refreshing and delicious choice for coffee lovers seeking an alternative to the traditional hot cup. With a unique blend of flavors and an irresistible presentation, Starbucks' iced coffee has everything to win you over. </p>
+            <a href="https://www.starbucks.com/store-locator" target="_blank" rel="noreferrer noopener">
+                <button class="botao"> Order now </button>
+            </a>
+        </article>
+        <aside class="caixa_imagem">
+            <img src="./Images/img1.png " alt="copo Starbucks" class="copao">
+        </aside>
+    </section>
+    <aside class="menu">
+        <img src="./Images/img-pequena1.png" alt="copo menor Starbucks" class="copo_menor">
+        <img src="./Images/img-pequena2.png" alt="copo menor 2 Starbucks" class="copo_menor2">
+        <img src="./Images/img-pequena3.png" alt="copo menor 3 Starbucks" class="copo_menor3">
+    </aside>
+</body>
+<script>
+    const copao = document.querySelector(".copao")
+    const verde = document.querySelector(".copo_menor")
+    const rosa = document.querySelector(".copo_menor2")
+    const roxo = document.querySelector(".copo_menor3")
+    const circulo = document.querySelector(".circulo")
+    const logotype = document.querySelector(".logo")
+    roxo.addEventListener("click", () => {
+        copao.src = "./Images/img3.png"
+        circulo.style.backgroundColor = "#DB1A9E";
+    })
+    rosa.addEventListener("click", () => {
+        copao.src = "./Images/img2.png"
+        circulo.style.backgroundColor = "#E66887";
+    })
+    verde.addEventListener("click", () => {
+        copao.src = "./Images/img1.png"
+        circulo.style.backgroundColor = "#017143";
+    })
+    const botao = document.querySelector(".botao");
+    botao.addEventListener("mouseover", function () {
+        botao.style.backgroundColor = "#ffffff";
+        botao.style.color = "#017143";
+        botao.style.fontWeight = "bolder";
+    });
+    botao.addEventListener("mouseout", function () {
+        botao.style.backgroundColor = "#017143";
+        botao.style.color = "#ffffff";
+        botao.style.fontWeight = "normal";
+    });
+    roxo.addEventListener("mouseover", function () {
+        roxo.style.transform = "scale(1.5) translate(0px, -10px)";
+        roxo.style.transition = "transform .3s linear";
+    });
+    rosa.addEventListener("mouseover", function () {
+        rosa.style.transform = "scale(1.5) translate(0px, -10px)";
+        rosa.style.transition = "transform .3s linear";
+    });
+    verde.addEventListener("mouseover", function () {
+        verde.style.transform = "scale(1.5) translate(0px, -10px)";
+        verde.style.transition = "transform .3s linear";
+    });
+    roxo.addEventListener("mouseout", function () {
+        roxo.style.transform = "scale(1) translate(0px, 0px)";
+    });
+    rosa.addEventListener("mouseout", function () {
+        rosa.style.transform = "scale(1) translate(0px, 0px)";
+    });
+    verde.addEventListener("mouseout", function () {
+        verde.style.transform = "scale(1) translate(0px, 0px)";
+    });
+</script>
+</html>
