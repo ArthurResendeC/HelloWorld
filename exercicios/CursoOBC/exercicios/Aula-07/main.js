@@ -1,14 +1,35 @@
-// Função para exibir a mensagem
-function mostrarMensagemCarrinho() {
-  const mensagem = document.getElementById("mensagemCarrinho"); // Pega o elemento da mensagem
-  mensagem.style.display = "block"; // Exibe a mensagem
+import { Random } from "random-js";
 
-  // Apaga a mensagem após 5 segundos
-  setTimeout(() => {
-    mensagem.style.display = "none";
-  }, 5000);
+const botao = document.getElementById("botaoAdicionar");
+const botaoGerar = document.getElementById("botaoGerar")
+const mensagem = document.getElementById("mensagemCarrinho");
+const paragrafoNumero = document.getElementById("randomNumber");
+const random = new Random();
+
+function gerarNumeros(){
+  const value = random.integer(1,999999);
+  let valueString = value.toString();
+  while (valueString.length < 6) {
+  valueString = '0' + valueString;
+  }
+  const valueWithZeros = valueString;
+  paragrafoNumero.innerText = `Número aleatório: ${valueWithZeros}`
 }
 
-// Adiciona o evento click ao botão
-const botaoAdicionar = document.getElementById("botaoAdicionar");
-botaoAdicionar.addEventListener("click", mostrarMensagemCarrinho);
+botao.addEventListener("click", function(){
+  mensagem.style.display = "block"
+  setTimeout(function (){
+    mensagem.style.display = "none"
+  }, 5 * 1000)
+})
+
+let intervaloID;
+
+botaoGerar.addEventListener("click", function(){
+  gerarNumeros()
+  clearInterval(intervaloID)
+  intervaloID = setInterval(gerarNumeros, 10 * 1000);
+})
+
+
+

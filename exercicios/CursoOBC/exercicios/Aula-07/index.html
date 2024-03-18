@@ -8,11 +8,24 @@
     #mensagemCarrinho{
       display: none;
     }
+    button{
+      padding: .5rem;
+      margin: 1rem;
+      width: 20vw;
+    }
+    p{
+      padding: .5rem;
+      text-indent: 1rem;
+    }
   </style>
 </head>
 <body>
   <button id="botaoAdicionar">Adicionar ao carrinho</button>
   <aside id="mensagemCarrinho">Item adicionado ao carrinho com sucesso!</aside>
-  <script src="main.js"></script>
+  <aside>
+    <button id="botaoGerar">Gerar número</button>
+    <p id="randomNumber"></p>
+  </aside>
+  <script src="main.js" type="module"></script>
 </body>
 </html>
