@@ -23,6 +23,7 @@ botao.addEventListener("click", function(){
   }, 5 * 1000)
 })
 
+
 let intervaloID;
 
 botaoGerar.addEventListener("click", function(){
