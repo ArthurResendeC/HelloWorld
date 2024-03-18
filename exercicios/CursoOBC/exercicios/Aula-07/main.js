@@ -23,7 +23,6 @@ botao.addEventListener("click", function(){
   }, 5 * 1000)
 })
 
-
 let intervaloID;
 
 botaoGerar.addEventListener("click", function(){
@@ -31,6 +30,26 @@ botaoGerar.addEventListener("click", function(){
   clearInterval(intervaloID)
   intervaloID = setInterval(gerarNumeros, 10 * 1000);
 })
+
+async function temporizador(tempoEmMilisegundos) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, tempoEmMilisegundos);
+  });
+}
+
+(async function() {
+  await temporizador(3000); // Aguarda 3 segundos
+  console.log("Alerta 1!");
+
+  await temporizador(5000); // Aguarda 5 segundos
+  console.log("Alerta 2!");
+
+  await temporizador(7000); // Aguarda 7 segundos
+  console.log("Alerta 3!");
+})();
+
 
 
 
