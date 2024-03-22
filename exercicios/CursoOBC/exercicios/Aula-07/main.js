@@ -45,6 +45,7 @@ async function temporizador(tempoEmMilisegundos) {
 
   await temporizador(5000);   
   console.log("Alerta 2!");
+
   await temporizador(7000); 
   console.log("Alerta 3!");
 })();
