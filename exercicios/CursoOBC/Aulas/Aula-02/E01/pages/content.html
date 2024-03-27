@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
-        <title>JS Documentation (or not)</title>
+        <title>JS Documentation (not actually)</title>
 </head>
 <body>
     <header>
@@ -178,6 +178,39 @@
                 <p>É uma sintaxe mais amigável e intuitiva usada para trabalhar com promises. Ao usar o <em>async</em> em uma função o JavaScript irá automaticamente retornar o resultado dela através de uma nova promise.</p>
                 <h3>Entendendo o await</h3>
                 <p>Assim como o async, ele serve para simplificar o uso das promises. Ao usar o <em>await</em> na chamda de uma função que retorna uma promise podermos esperar sua execução, evitando o uso do <em>.then()</em> para lidar com o resultado.</p>
+            </article>
+            <article>
+                <h2>Requisições HTTP</h2>
+                <h3>O que é o protocolo HTTP:</h3>
+                <p>É um protocolo usado na web para transferir dados entre navegadores e servidores. Ele permite que os navegadores solicitem e recebam conteúdo como páginas da web e dados em formato JSON, de servidores na internet.</p>
+                <h3>Características do HTTP:</h3>
+                <ul>
+                    <li>Simples: fácil de entender e utilizar;</li>
+                    <li>Extensível: permite adiconar novas funcionalidades facilmente;</li>
+                    <li>Stateless: sem estado- requisições são independentes.</li>
+                </ul>
+                <h3>Requisições</h3>
+                <p>Mensagens enviadas pelo navegador para o servidor. Em geral possuem:</p>
+                <ul>
+                    <li>Versão: a versão do protocolo HTTP usada;</li>
+                    <li>Método: o tipo de operação a ser realizada (GET, POST, OPTIONS, HEAD, etc);</li>
+                    <li>Caminho: caminho do recurso a ser obtido, ou seja, a URL sem a parte inicial;</li>
+                    <li>Cabeçalho: dados adicionais compartilhados entre clientes e sevidor;</li>
+                    <li>Corpo: conteúdo da mensagem, usado, por exemplo, ao enviar dados via POST.</li>
+                </ul>
+                <h3>Respostas</h3>
+                <p>Mensagens enviadas do servidor para o navegador em resposta a uma requisição específica. Possuem:</p>
+                <ul>
+                    <li>Versão: a versão do protocolo HTTP usado;</li>
+                    <li>Código de Status: um código com uma breve mensagem indicando se a requisição foi bem sucedida ou não (e o motivo);</li>
+                    <li>Cabeçalho: dados adicionais compartilhados entre cliente e sevidor;</li>
+                    <li>Corpo: conteúdo da mensagem (como yma página HTML ou um documento JSON).</li>
+                </ul>
+                <h2>REST e RESTfull</h2>
+                <h3>O que é REST:</h3>
+                <p>É uma arquitetura que visa padronizar a forma como nos comunicamos através das requisições HTTP. É a sigla para <em>Representation State Transfer</em>, pois transfere-se uma representação de um estado no sevidor para que ele possa ser gerenciado através da comunicação HTTP.</p>
+                <h3>APIs RESTfull e Métodos HTTP</h3>
+                <p>São serviços web que seguem o padrão REST, fornecendo uma interface de comunicação para realizar operações usando os métodos HTTP, como GET, POST, PUT e DELETE.</p>
             </article>
             <aside>
                 <h2>Exercícios aula 01:</h2>

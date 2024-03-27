@@ -53,3 +53,9 @@ main{
     text-indent: .8rem;
     line-height: 1.5rem;
 }
+
+article{
+    border-top: 8px dashed wheat;
+    margin-top:  2rem;
+    padding-top: .5rem;
+}

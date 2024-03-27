@@ -15,6 +15,7 @@ botao.addEventListener("click", function () {
 
 let numerosAleatorios = [];
 let numeroGerados = 1;
+let intervaloID;
 
 function gerarNumeros(quantidade = 10) {
   const value = random.integer(1, 999999);
@@ -24,7 +25,7 @@ function gerarNumeros(quantidade = 10) {
   }
   const valueWithZeros = valueString;
   numerosAleatorios.push(valueWithZeros);
-  paragrafoNumero.innerText = `Número ${numeroGerados} de ${quantidade}: ${valueWithZeros}`;
+  paragrafoNumero.innerText = `Número ${numeroGerados} de ${quantidade} gerado!`;
   console.log(numerosAleatorios);
 
   if (numeroGerados >= quantidade) {
@@ -35,9 +36,8 @@ function gerarNumeros(quantidade = 10) {
   numeroGerados++;
 }
 
-let intervaloID;
 
-botaoGerar.addEventListener("click", function () {
+botaoGerar.addEventListener("click",()=>{
   gerarNumeros();
   clearInterval(intervaloID);
   intervaloID = setInterval(gerarNumeros, 3 * 1000);
@@ -51,7 +51,7 @@ async function temporizador(tempoEmMilisegundos) {
   });
 }
 
-(async function () {
+(async () => {
   await temporizador(3000);
   console.log("Alerta 1!");
 
