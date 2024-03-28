@@ -13,8 +13,10 @@
         width: 70vw;
         margin: 0 auto 2rem auto;
         border-radius: 0 0 2rem 2rem;
+        padding: 1rem;
     }
-    article{
-        width: 70vw;
+    button{
+        padding: 0;
+        margin: 1rem;
     }
 }
