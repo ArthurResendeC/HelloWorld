@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criação e Listagem de Posts</title>
+</head>
+<body>
+  <h1>Criação e Listagem de Posts</h1>
+
+  <h2>Novo Post</h2>
+  <form id="postForm">
+    <label for="title">Título do post</label> <br>
+    <input type="text" id="title" required> <br>
+    <label for="body"></label>
+    <textarea id="body" cols="50" rows="5" required></textarea> <br>
+    <button type="submit">Criar post</button>
+  </form>
+
+  <h2>Posts</h2>
+  <ul id="postsList">
+    <p>A lista está vazia :(</p>
+  </ul>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
