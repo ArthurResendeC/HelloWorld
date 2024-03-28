@@ -32,7 +32,7 @@ async function criarPost(title,body){
     body: JSON.stringify({title,body})
 })
     if(!resposta.ok){
-        console.info(`Fez merda bro! ${resposta.status} - ${resposta.statusText}`);
+        console.info(`A requisição está incorreta! ${resposta.status} - ${resposta.statusText}`);
     } else{
         carregarPosts();
     }
@@ -43,7 +43,7 @@ async function carregarPosts(){
     const posts = await resposta.json()
 
     console.log(posts);
-    exibirPosts(posts)
+    exibirPosts(posts);
 }
 
 function exibirPosts(posts){
