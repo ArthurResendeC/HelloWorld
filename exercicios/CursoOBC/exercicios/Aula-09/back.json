@@ -1,3 +1,9 @@
 {
-    "livros": []
+  "livros": [
+    {
+      "id": "2e8f",
+      "nome": "O menino do Pijama Listrado",
+      "progresso": "290"
+    }
+  ]
 }
