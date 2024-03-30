@@ -2,14 +2,11 @@ const bookForm = document.getElementById("bookForm");
 const titleInput = document.getElementById("title");
 const readProgress = (document.getElementById("readProgress"));
 const booksList = document.getElementById("booksList");
-
 carregarLivros();
-
 bookForm.addEventListener("submit", (event)=>{
   event.preventDefault()
   const nome = titleInput.value;
   const progresso = readProgress.value;
-
   if(progresso >= 1000){
     const warning = window.confirm(`Tem certeza que você leu ${progresso} páginas?`)
     if(warning){
@@ -24,12 +21,9 @@ bookForm.addEventListener("submit", (event)=>{
   } else{
     alert(`Adicionando "${nome}"...`)
     adicionarLivro(nome,progresso);
-    titleInput.value = "";
-    readProgress.value= "";
+    event.target.reset()
   }
-
 })
-
 async function adicionarLivro(nome,progresso){
   const resposta = await fetch("http://localhost:3000/livros", {
     method:"POST",
@@ -44,44 +38,35 @@ async function adicionarLivro(nome,progresso){
     carregarLivros();
   }
 }
-
 async function carregarLivros(){
   const resposta = await fetch("http://localhost:3000/livros")
   const livros = await resposta.json()
-
-  console.log(livros);
   exibirLivros(livros);
 }
-
 function exibirLivros(livro){
   booksList.innerHTML=""
   livro.forEach((livro) => {
-    const listItem = document.createElement("li");
-    listItem.dataset.id = livro.id;
-    listItem.innerHTML = 
-  ` <article>
-      <h3>Título: ${livro.nome}</h3> 
-      <p>${livro.progresso} páginas lidas</p> 
-      <p>Id: ${livro.id}</p>
-      <button class="botaoExcluir">Excluir</button> 
-    </article> 
-    <hr>`
-    booksList.appendChild(listItem)
+    const title = document.createElement("h3")
+    title.dataset.id = livro.id;
+    title.innerHTML = `${livro.nome}`
+    const pages = document.createElement("p")
+    pages.innerHTML = `${livro.progresso} páginas lidas`
+    const btnDel = document.createElement("button");
+    btnDel.textContent = "Excluir"
+    btnDel.className = "botaoExcluir"
+    btnDel.addEventListener("click", ()=> {
+      excluirLivro(livro.id)
+    })
+    booksList.appendChild(title)
+    booksList.appendChild(pages)
+    booksList.appendChild(btnDel)
   });
+
+  return booksList
 }
 
-async function excluirLivro(idLivro) {
-  // Remover o item do HTML
-  const listaLivros = document.getElementById("booksList");
-  const itemLivro = document.querySelector(`li[data-id="${idLivro}"]`);
-  listaLivros.removeChild(itemLivro);
-
-  // Remover o item do banco de dados JSON
-  const resposta = await fetch(`http://localhost:3000/livros/${idLivro}`, {
-    method: "DELETE",
-  });
-
-  if (!resposta.ok) {
-    console.error(`Erro ao excluir livro: ${resposta.status} - ${resposta.statusText}`);
-  }
+async function excluirLivro(id) {
+  console.log(id);
+  await fetch(`http://localhost:3000/livros/${id}`,{method:"DELETE"})
+  carregarLivros()
 }
