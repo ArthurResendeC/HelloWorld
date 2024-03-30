@@ -66,7 +66,6 @@ function exibirLivros(livro){
 }
 
 async function excluirLivro(id) {
-  console.log(id);
   await fetch(`http://localhost:3000/livros/${id}`,{method:"DELETE"})
   carregarLivros()
 }
