@@ -1,14 +1,114 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+:root{
+  --brandColor: #00AEFF;
+  --blue: #2962FF;
+  --green: #0BB07B;
+  --yellow: #ffce52;
+  --red: #F03D3D;
+  --backgroundGray: #EBE9EA;
+}
+
+#discount{
+  background-color: var(--brandColor);
+  color: black;
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+#brand{
+  text-align: center;
+  padding: 1rem 0;
+}
+
+img{
+  width: 250px;
+  height: 150px;
+}
+.shoesImg{
+  display: flex;
+  justify-content: center;
+  background-color: var(--backgroundGray);
+  margin: 1rem;
+}
 
 
+h2,h3{
+  padding: 1.5rem 0;
+}
 
+#presentation{
+  background-image: url('images/wallpaper.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 417px;
+  letter-spacing: 1px;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+#highlights{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+#highlights>p{
+  font-size: 1.25rem;
+}
+#highlights>h3{
+  font-size: 2rem;
+}
+
+footer{
+  background-color: var(--brandColor);
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  #presentation{
+    padding: 5rem;
+    font-size: 1.5rem;
+    align-items: baseline;
+    line-height: 2rem;
+  }
+  #presentationP{
+    width: 55%;
+  }
+}
+
+.shoesSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.shoesImg{
+  width: 20%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
 
 
 
