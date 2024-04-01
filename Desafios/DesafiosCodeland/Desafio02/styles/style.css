@@ -46,7 +46,7 @@ h2,h3{
 }
 
 #presentation{
-  background-image: url('images/wallpaper.jpeg');
+  background-image: url('../images/wallpaper.jpeg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
