@@ -1,13 +1,70 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <title>One page</title>
+</head>
+<body>
+  <header>
+    <div id="headerDiv">
+      <h1>Lorem ipsum dolor sit amet</h1>
+      <div id="headerContent">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iusto nam nemo corporis, numquam eligendi vel aperiam ad praesentium lorem ipsum dolor.</p>
+        <button id="headerBtn">Botão</button>
+      </div>
+    </div>
+    <img src="images/illustration.svg" alt="">
+  </header>
+  <main>
+    <section>
+      <article>
+        <div id="redDiv" class="coloredDivs"></div>
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime repellat aspernatur commodi consectetur cumque harum.</p>
+      </article>
+      <article>
+        <div id="cyanDiv" class="coloredDivs"></div>
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime repellat aspernatur commodi consectetur cumque harum!</p></article>
+      <article>
+        <div id="purpleDiv" class="coloredDivs"></div>
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime repellat aspernatur commodi consectetur cumque harum minima!</p></article>
+    </section>
+    <section>
+      <article>
+        <div id="greenDiv" class="coloredDivs"></div>
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime repellat aspernatur commodi consectetur cumque harum minima!</p></article>
+      <article>
+        <div id="yellowDiv" class="coloredDivs"></div>
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime repellat aspernatur commodi consectetur cumque harum minima!</p></article>
+      <article>
+        <div id="blueDiv" class="coloredDivs"></div>
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime repellat aspernatur commodi consectetur cumque harum minima!</p></article>
+    </section>
+  </main>
+  <footer>
+    <h2>Entrar em contato</h2>
+    <form autocomplete="off">
+      <label for="nome"></label>
+      <input name="nome" type="text" placeholder="Nome">
+      <label for="email"></label>
+      <input name="email" type="text" placeholder="Email">
+      <label for="tel"></label>
+      <input name="tel" type="text" placeholder="Telefone">
+      <label for="msg"></label>
+      <textarea name="msg" cols="22" rows="5" placeholder="Digite sua mensagem"></textarea>
+      <button type="submit" id="footerBtn">Enviar mensagem</button>
+    </form>
+  </footer>
+</body>
 </html>

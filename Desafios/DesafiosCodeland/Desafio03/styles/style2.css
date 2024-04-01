@@ -1,0 +1,26 @@
+@media screen and (min-width: 980px) {
+    img{
+        width: 20%;
+        margin: 0;
+    }
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 10rem;
+    }
+    #headerDiv{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    section{
+        display: flex;
+        margin: auto;   
+        gap: 5rem;
+        width: 72.5%;
+    }
+    form{
+        width: 30%;
+    }
+}
