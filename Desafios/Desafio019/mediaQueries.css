@@ -1,0 +1,22 @@
+@media screen and (min-width: 668px) {
+    body{
+        background-color: hsl(205, 33%, 90%);
+    }
+    header{
+        width: 70vw;
+        background-color: white;   
+        margin: 2rem auto 0 auto;
+        border-radius: 2rem 2rem 0 0;
+    }
+    section{
+        background-color: white;
+        width: 70vw;
+        margin: 0 auto 2rem auto;
+        border-radius: 0 0 2rem 2rem;
+        padding: 1rem;
+    }
+    button{
+        padding: 0;
+        margin: 1rem;
+    }
+}

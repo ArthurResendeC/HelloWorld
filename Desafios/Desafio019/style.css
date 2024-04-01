@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --primaryColor:hsl(1, 90%, 64%);
+    --secondaryColor: hsl(219, 85%, 26%);
+    --veryLightBlue:hsl(210, 60%, 98%);
+    --lightBlue1: hsl(211, 68%, 94%);
+    --lightBlue2: hsl(205, 33%, 90%);
+    --grayishBlue: hsl(219, 14%, 63%);
+    --darkGrayishBlue: hsl(219, 12%, 42%);
+    --veryDarkBlue: hsl(224, 21%, 14%);
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 1rem .25rem;
+}
+
+#title{
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+article{
+    display: flex;
+    gap: 1rem;
+    letter-spacing: .25px;
+    padding: 1rem;
+    
+}
+
+.hidden{
+    opacity: 0;
+}
+.newNotification{
+    background-color: var(--veryLightBlue);
+    border-radius: 1rem;
+}
+.oldNotification{
+    background-color: transparent;
+    border-radius: 1rem;
+}
+
+#notifications{
+    background-color: var(--secondaryColor);
+    color: white;
+    padding: .175rem .75rem;
+    margin: 0 .5rem;
+    border-radius: .5rem;
+}
+
+.messagePreview{
+    border: 2px solid var(--lightBlue1);
+    cursor: pointer;
+    margin: 1rem;
+    padding: 8px;
+}
+.messagePreview:hover{
+    background-color: var(--lightBlue1);
+}
+
+.notificationTime{
+    color: var(--grayishBlue);
+}
+
+strong, .socialGroup{
+    font-weight: bold;
+    color: gray;
+}
+strong:hover, .userNames:hover, .socialGroup:hover{
+    color: rgb(0, 0, 175);
+    cursor: pointer
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+button:hover{
+    color: rgb(0, 0, 175);
+}
+
+.userNames{
+    font-weight: bold;
+}
+
+img{
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+#chessImg{
+    margin-left: auto;
+}
