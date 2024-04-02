@@ -4,6 +4,9 @@
         width: 400px;
         height: 330px;
     }
+    body{
+        overflow: visible;
+    }
     main{
         display: flex;
         justify-content: space-between;

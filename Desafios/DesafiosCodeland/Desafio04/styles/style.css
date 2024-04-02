@@ -40,8 +40,7 @@ form{
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 90%;
+    width: 80%;
 }
 #rememberMeForget{
     display: flex;
@@ -80,7 +79,7 @@ footer{
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
+    padding-top: 6rem;
 }
 #googleLogo{
     width: 20px;
