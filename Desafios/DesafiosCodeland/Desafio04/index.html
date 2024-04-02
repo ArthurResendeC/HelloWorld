@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/mediaQuery.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <title>Desafio 04</title>
+</head>
+<body>
+  <main>
+    <aside id="imgAside">
+      <img id="illustration" src="images/illustration.svg" alt="">
+    </aside>
+    <section id="mainContainer">
+      
+        <form id="formulary" autocomplete="off">
+          <article id="header">
+            <p>Bem vindo de volta</p>
+            <h1>Faça login na sua conta</h1>
+          </article>
+            <label for="email">E-mail:</label>
+            <br>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="password">Senha:</label>
+            <br>
+            <input type="password" name="password" id="password">
+            <br>
+            <aside id="rememberMeForget">
+              <div>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Lembre de mim</label>
+              </div>
+              <a href="#" id="forgot">Esqueceu sua senha</a>
+            </aside>
+            <br>
+            <button id="loginBtn" type="submit">Entrar</button>
+            <br>
+            <button id="googleBtn" type="button"><img id="googleLogo" src="images/googleLogo.png" alt="">Ou faça login com o Google</button>
+        </form>
+    </section>
+  </main>
+  <footer>
+    <p>Não tem uma conta? <a href="">Cadastre-se</a></p>
+  </footer>
+  <script type="module" src="index.js"></script>
+</body>
+</html>

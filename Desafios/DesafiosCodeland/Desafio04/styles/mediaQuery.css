@@ -1,0 +1,25 @@
+@media screen and (min-width: 1000px){
+    #illustration{
+        display: block;
+        width: 400px;
+        height: 330px;
+    }
+    main{
+        display: flex;
+        justify-content: space-between;
+    }
+    #mainContainer{
+        width: 50%;
+    }
+    #imgAside{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F7FAFC;
+        height: 100vh;
+        width: 50%;
+    }
+    form{
+        width: 52.5%;
+    }
+}
