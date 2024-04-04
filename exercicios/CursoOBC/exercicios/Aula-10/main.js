@@ -1,18 +1,24 @@
-import { createQuestion } from './src/api'
+import { fetchResults } from './src/api'
+import { createEmptyQuestion, loadQuestionsManager } from './src/questions'
 import { addSubmitResultListener, loadResults } from './src/results'
 import './style.css'
 
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", async function (){
   const newResultForm = document.getElementById("newResultForm")
-  const resultsList = document.getElementById("resultsList")
   if(newResultForm){addSubmitResultListener(newResultForm)}
-  if(resultsList){loadResults(resultsList)}
 
+  const results = await fetchResults()
+
+  const resultsList = document.getElementById("resultsList")
+  if(resultsList){loadResults(resultsList)}
+  
+  const questionsManager = document.getElementById("questionsManager")
+  if(questionsManager) loadQuestionsManager(questionsManager)
+  
   const newQuestionBtn = document.getElementById("newQuestion")
-  if(newQuestionBtn){
-    newQuestionBtn.addEventListener("click",()=>{
-      createQuestion()
-    })
-  }
+  if(newQuestionBtn){newQuestionBtn.addEventListener("click",()=>{createEmptyQuestion(
+    questionsManager, results
+    )}
+  )}
 })

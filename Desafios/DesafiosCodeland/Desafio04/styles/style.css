@@ -74,6 +74,9 @@ button{
 #googleBtn{
     background-color: var(--dark10);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 footer{
     font-family: 'Lato', Arial, Helvetica, sans-serif;

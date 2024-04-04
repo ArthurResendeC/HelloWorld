@@ -42,11 +42,28 @@ export async function createQuestion(text = "Escreva sua pergunta...", points = 
 }){
     const body = JSON.stringify({text: text,points: points})
 
-    await fetch("http://localhost:3000/questions", {
+    const response = await fetch("http://localhost:3000/questions", {
         method:"POST",
         headers:{ "Content-Type": "application/json"},
         body: body
-    })
+    }) 
+
+    if(!response.ok) return alert("Erro ao criar uma nova pergunta.")
+
+    return await response.json()
 }
 //uma para editar a pergunta
+export async function updateQuestion(questionId, text, points){
+    const body = JSON.stringify({text, points})
+
+    await fetch(`http://localhost:3000/questions/${questionId}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: body    
+    })
+}
 //e uma para excluir a pergunta
+
+export async function deleteQuestion(questionId){
+    await fetch(`http://localhost:3000/questions/${questionId}`, {method: "DELETE"})
+}
