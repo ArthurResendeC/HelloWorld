@@ -1,0 +1,24 @@
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    background-color: #628E75;
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+header>img{
+    width: 100px;
+    height: 48px;
+}
