@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aprendendo CSS Grid</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Practicing</title>
 </head>
 <body>
-  <header></header>
   <main>
     <section>
-      <article></article>
-      <article></article>
+      <form id="formulary" autocomplete="off">
+        <label for="product">Digite um produto para ser adicionado à lista de compras</label>
+        <br>
+        <input type="text" name="product" id="product" required>
+        <br>
+        <label for="amount">Quantidade</label>
+        <br>
+        <input type="number" name="amount" id="amount" required>
+        <br>
+        <input type="submit" value="Adicionar à lista">
+      </form>
     </section>
-    <section>
-      <article></article>
-      <article></article>
-    </section>
+    <aside>
+      <h2>Lista de compras</h2>
+      <ul id="printer">
+        <li>A lista está vazia</li>
+      </ul>
+    </aside>
   </main>
   <footer></footer>
+  <script src="main.js"></script>
 </body>
 </html>
