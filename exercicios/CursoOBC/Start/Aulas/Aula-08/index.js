@@ -1,4 +1,3 @@
-
 async function executar(){
     const postsList = document.getElementById("postsList")
 
