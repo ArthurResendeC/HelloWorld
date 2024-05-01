@@ -1,11 +1,5 @@
 let produtos = []
 
-const produto1 = {
-    nome: "",
-    quantidade: 0,
-}
-    
-
 exibirMenu()
 
 function exibirMenu(){
@@ -33,7 +27,6 @@ function exibirMenu(){
             break
             default:
                 alert(`Opção inválida!`);
-                exibirMenu()
             }
         } else{
             alert(`Você deve digitar um número!`)
@@ -62,7 +55,6 @@ function adicionarProdutos(){
     produtos.push(novoProduto);
 
     alert(`O produto "${nome}" foi adicionado com sucesso!`)
-    exibirMenu()
 }
 
 function listarProdutos() {
@@ -77,8 +69,6 @@ function listarProdutos() {
 
     alert(`Lista de produtos:\n\n` + mensagem);
     }
-
-    exibirMenu();
 }
 
 function alterarQtdProdutos(){
@@ -104,7 +94,6 @@ function alterarQtdProdutos(){
     produtoEncontrado.quantidade = novaQuantidade;
     alert(`A quantidade do produto "${nomeDoProduto}" foi alterada para ${novaQuantidade} com sucesso!`)
     listarProdutos();
-    exibirMenu();
     }
 }
 
@@ -115,21 +104,18 @@ function removerItem() {
 
     // Encontrar o índice do item a ser removido
     for (let i = 0; i < produtos.length; i++) {
-    if (produtos[i].nome === nomeDoProduto) {
+    if (produtos[i].nome == nomeDoProduto) {
         indiceDoProduto = i;
         break;
     }
 }
 
     // Remover o item da lista
-    if (indiceDoProduto > 0) {
+    if (indiceDoProduto >= 0) {
     produtos.splice(indiceDoProduto, 1);
     alert(`O produto "${nomeDoProduto}" foi removido com sucesso!`);
     } else {
     alert(`O produto "${nomeDoProduto}" não foi encontrado!`);
     }
     listarProdutos();
-    exibirMenu();
 }
-
-
