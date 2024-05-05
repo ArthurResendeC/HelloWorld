@@ -1,37 +1,3 @@
-// let pacientes = [" Louis Inácio", " Jairo Messi", " Nicolás Verde"]
-// let opcaoEscolhida
-
-// do {
-//     opcaoEscolhida = prompt(`Lista de pacientes:
-//     ${pacientes}
-// Escolha uma ação:
-// 1- Adicionar pacientes;
-// 2- Constar atendimento completo;
-// 3- Sair`)
-
-//     switch (opcaoEscolhida) {
-//         case "1":
-//             const aSerAdicionado = prompt("Qual o nome do paciente a entrar na fila?")
-//             pacientes.push(" " + aSerAdicionado)
-//             break;
-//         case "2":
-//             const aSerRemovido = prompt("Qual o nome do paciente que já foi atendido")
-//             let indice = pacientes.indexOf(" " + aSerRemovido)
-//             if(" " + aSerRemovido == pacientes[indice]){
-//                 let pacienteRemovido = pacientes.splice(indice, 1,)
-//                 alert(`O paciente ${pacienteRemovido} foi atendido e retirado da fila!`)
-//             } else{
-//                 alert("Esse paciente não se encontra na fila!")
-//             }
-//             break
-//         case "3":
-//             alert("saindo")
-//             break
-//         default:
-//             alert("Opção inválida")
-//             break;
-//     }
-// } while (opcaoEscolhida !== "3");
 // Definindo a fila de espera inicialmente vazia
 let filaEspera = [];
 
@@ -90,6 +56,7 @@ function mostrarFilaEspera() {
         alert("Não há pacientes na fila de espera.");
     } else {
         let listaPacientes = "Lista de pacientes na fila de espera:\n";
+        // Os parâmetros 'paciente' e 'index' são nomeados pelo programador mas eles fazem referência a um dado que o próprio JS dá em funções de callback dentro de um forEach quando trabalhamos com arrays, na seguinte ordem: O valor atual do elemento, O índice do elemento e o próprio array percorrido.
         filaEspera.forEach((paciente, index) => {
             listaPacientes += `${index + 1}. ${paciente}\n`;
         });
