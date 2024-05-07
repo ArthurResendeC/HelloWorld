@@ -4,11 +4,11 @@ let filaEspera = [];
 // Função para exibir o menu e interagir com o usuário
 function mostrarMenu() {
     let menu = "===== Consultório Médico =====\n";
-    menu += "1. Novo paciente\n";
-    menu += "2. Consultar paciente\n";
-    menu += "3. Mostrar fila de espera\n";
-    menu += "4. Sair\n";
-    menu += "===============================\n";
+        menu += "1. Novo paciente\n";
+        menu += "2. Consultar paciente\n";
+        menu += "3. Mostrar fila de espera\n";
+        menu += "4. Sair\n";
+        menu += "===============================\n";
     
     const opcao = parseInt(prompt(menu));
 
