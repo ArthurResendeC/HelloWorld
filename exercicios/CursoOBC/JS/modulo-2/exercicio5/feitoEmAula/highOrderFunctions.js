@@ -70,7 +70,7 @@ lista.forEach(exibirElemento)
 lista.forEach(function (elemento, indice, array) {
     console.log({
         elemento,
-    indice,
-    array
+        indice,
+        array
     })
 })
