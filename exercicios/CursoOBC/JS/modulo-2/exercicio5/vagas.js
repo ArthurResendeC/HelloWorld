@@ -91,7 +91,7 @@ function visualizarVaga(){
         Quantidade de candidatos à vaga: ${vaga.nmrCandidatos}
         Candidatos à vaga: ${vaga.candidatosAVaga}`)
     } else{
-        alert("O índice apresentado não faz referência à nenhuma vaga!")
+        alert("Ação cancelada ou o índice apresentado não faz referência à nenhuma vaga!")
     }
 }
 
@@ -113,9 +113,9 @@ function inscreverCandidato() {
 }
 
 function excluirVaga() {
-    const indice = parseInt(prompt("Qual o índice da vaga a ser excluída?") - 1)
+    const indice = parseInt(prompt("Qual o índice da vaga a ser excluída?")) - 1
     if (indice >= 0 && indice < vagas.length) {
-        const confirmacao = confirm(`Tem certeza que deseja excluir a vaga de ${vagas.identificacao}?`)
+        const confirmacao = confirm(`Tem certeza que deseja excluir a vaga de ${vagas[indice].identificacao}?`)
         if (confirmacao) {
             alert("A vaga " + vagas[indice].identificacao + " foi excluída com sucesso!")
             vagas.splice(indice, 1)
