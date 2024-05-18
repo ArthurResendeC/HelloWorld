@@ -47,13 +47,11 @@ function criarNovaVaga(){
     const identificacao = prompt("Qual a identificação da vaga?")
     const descricao = prompt("Qual a descrição da vaga?")
     const dataLimite = prompt("Qual a data limite para essa vaga ser preenchida? (mm/dd/aaaa)")
-    let nmrCandidatos = 0
     let candidatosAVaga = []
 
     novaVaga.identificacao = identificacao
     novaVaga.descricao = descricao
     novaVaga.dataLimite = dataLimite
-    novaVaga.nmrCandidatos = nmrCandidatos
     novaVaga.candidatosAVaga = candidatosAVaga
 
     
@@ -73,7 +71,7 @@ function listarVagas(){
     } else{
         let listaDeVagas = "Lista de vagas cadastradas:\n"
         vagas.forEach((vaga, indice) =>{
-            listaDeVagas += `${indice +1}. ${vaga.identificacao} - ${vaga.nmrCandidatos} candidatos;\n`
+            listaDeVagas += `${indice +1}. ${vaga.identificacao} - ${vaga.candidatosAVaga.length} candidatos;\n`
         })
         alert(listaDeVagas)
     }
@@ -88,8 +86,8 @@ function visualizarVaga(){
         Nome: ${vaga.identificacao}
         Descrição: ${vaga.descricao}
         Data limite: ${vaga.dataLimite}
-        Quantidade de candidatos à vaga: ${vaga.nmrCandidatos}
-        Candidatos à vaga: ${vaga.candidatosAVaga}`)
+        Quantidade de candidatos à vaga: ${vaga.candidatosAVaga.length}
+        Candidato(s) à vaga: ${vaga.candidatosAVaga}`)
     } else{
         alert("Ação cancelada ou o índice apresentado não faz referência à nenhuma vaga!")
     }
@@ -103,7 +101,6 @@ function inscreverCandidato() {
         console.log(vagas[indice]);
         const confirmacao = confirm(`Tem certeza que deseja adicionar ${nomeCandidato} à ${vagas[indice].identificacao}?`)
         if (confirmacao) {
-            vagas[indice].nmrCandidatos++
             vagas[indice].candidatosAVaga.push(nomeCandidato) 
             alert(`${nomeCandidato} foi adicionado à vaga ${vagas[indice].identificacao}!`)
         } else{
