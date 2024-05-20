@@ -82,12 +82,21 @@ function visualizarVaga(){
 
     if (indice >= 0 && indice < vagas.length) {
         let vaga = vagas[indice]
+        if (vaga.candidatosAVaga.length === 0) {
+            alert(`Índice: ${indice+1}
+        Nome: ${vaga.identificacao}
+        Descrição: ${vaga.descricao}
+        Data limite: ${vaga.dataLimite}
+        Quantidade de candidatos à vaga: ${vaga.candidatosAVaga.length}
+        Candidato(s) à vaga: Nenhum`)
+        } else{
         alert(`Índice: ${indice+1}
         Nome: ${vaga.identificacao}
         Descrição: ${vaga.descricao}
         Data limite: ${vaga.dataLimite}
         Quantidade de candidatos à vaga: ${vaga.candidatosAVaga.length}
         Candidato(s) à vaga: ${vaga.candidatosAVaga}`)
+        }
     } else{
         alert("Ação cancelada ou o índice apresentado não faz referência à nenhuma vaga!")
     }
@@ -98,14 +107,15 @@ function inscreverCandidato() {
     const indice = parseInt(prompt("Qual o índice da vaga na qual deseja adicionar o " + nomeCandidato + "?") - 1)
 
     if (indice >= 0 && indice < vagas.length) {
-        console.log(vagas[indice]);
         const confirmacao = confirm(`Tem certeza que deseja adicionar ${nomeCandidato} à ${vagas[indice].identificacao}?`)
         if (confirmacao) {
-            vagas[indice].candidatosAVaga.push(nomeCandidato) 
+            vagas[indice].candidatosAVaga.push(" "+nomeCandidato) 
             alert(`${nomeCandidato} foi adicionado à vaga ${vagas[indice].identificacao}!`)
         } else{
             alert("O candidato não foi adicionado à vaga...")
         }
+    } else{
+        alert("Ação cancelada ou o índice indicado não faz referência à nenhuma vaga!")
     }
 }
 
