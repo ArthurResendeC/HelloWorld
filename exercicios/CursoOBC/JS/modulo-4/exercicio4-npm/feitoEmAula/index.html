@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Explicação em texto da aula</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <article>
+                <h1>Usando o NPM</h1>
+                <p>O npm é disponibilizado junto com o Node.js, ou seja, ao baixar e instalar o Node.js você também terá
+                    o npm. Caso ainda não possua o Node.js e o npm, instale-os. No Linux você pode instalar o Node e o
+                    npm utilizando o gerenciador de pacotes da sua distribuição (apt para Debian/Ubuntu, yum para
+                    Fedora, pacman para Arch, etc)No Linux também é possível usar o asdf, um gerenciador de versões,
+                    para instalar o Node e o npm. Passo a passo da instalação: <a
+                        href="https://asdf-vm.com/guide/getting-started.html">https://asdf-vm.com/guide/getting-started.html</a>.
+                    No Windows a maneira mais fácil de instalar o npm é através do site <a
+                        href="https://nodejs.org/en/download">https://nodejs.org/en/download</a> , baixando a versão LTS
+                    (versão mais estável, menos sujeita a bugs e falhas de segurança)Atenção! Se você utiliza o WSL deve
+                    instalar o Node e o npm dentro da sua distribuição Linux do WSL, seguindo o método de instalação
+                    para Linux.</p>
+                <p>No Windows a maneira mais fácil de instalar o npm é através do site https://nodejs.org/en/download ,
+                    baixando a versão LTS (versão mais estável, menos sujeita a bugs e falhas de segurança)</p>
+            </article>
+            <article>
+                <h2>Agora já podemos acessar uma pasta e criar um projeto gerenciado pelo npm com o seguinte comando:
+                </h2>
+                <pre><code>npm init</code></pre>
+                <h2>Para instalar um novo módulo no nosso projeto usamos o comando:Obs.: Veja que isso criará a pasta
+                    “node_modules”, que é onde todos os nossos módulos instalados ficam localizados.</h2>
+                <pre><code>npm install --save lodash</code></pre>
+            </article>
+            <article>
+                <h2>Já podemos criar um arquivo “index.js”, importar o módulo lodash e utilizá-lo:Obs.: Repare que
+                    estamos trabalhando com o Node.js e não com o browser, então vamos usar o CommonJS.</h2>
+                <pre><code>const _ = require("lodash")
+console.log(_.isArray([]))
+console.log(_.kebabCase("Isaac Pontes"))
+                    </code>
+                </pre>
+                <h2>Outra funcionalidade importante é a instalação de dependências de desenvolvimento, o que pode ser
+                feito com a flag: <br> Obs.: Uma dependência de desenvolvimento é um módulo que o nosso projeto só utiliza
+                enquanto estamos codificando ele, para ele se usado de verdade ela não será necessária.</h2>
+                <pre><code>npm install --save-dev eslint</code></pre>
+            </article>
+            <article>
+                <h2>Um último recurso interessante para mencionar nessa nossa introdução são as dependências globais. Uma dependência global é um módulo que não fica vinculado a um projeto específico, mas é instalado no seu computador para você usar onde e quando quiser. Para instalar um módulo globalmente usamos o comando com a flag:</h2>
+                <pre><code>npm install --global sass</code></pre>
+                <h2>E por fim, também podemos remover módulos manualmente excluindo-os do arquivo “package.json” ou usando o comando:</h2>
+                <pre><code>npm uninstall eslint</code></pre>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
