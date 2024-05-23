@@ -1,0 +1,25 @@
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow: auto;
+    width: 55vw;
+}
+code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #d63384;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 70vw;
+    margin: auto;
+    background-color: lightgrey;
+    padding: 2rem;
+    border-radius: 1rem;
+}

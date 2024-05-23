@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js""></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Usando o webpack</title>
+</head>
+<body>
+    <header>
+        <h1>Usando o Webpack</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h2>Para começar vamos inicializar um novo projeto npm:</h2>
+                <pre><code>npm init -y</code></pre>
+                <p>Dentro desse novo projeto vamos criar uma pasta “dist” e dentro dela uma página “index.html” simples apenas para testarmos a saída do webpack (como a que está hosteando esse conteúdo.)</p>
+                <p>Agora vamos criar uma pasta “src” e um arquivo “index.js” dentro dela, por enquanto sem conteúdo.</p>
+                <p>Com tudo preparado, vamos instalar como dependências de desenvolvimento o webpack e a webpack-cli, que permite interagir com o webpack pela linha de comando:</p>
+                <pre><code>npm install --save-dev webpack webpack-cli</code></pre>
+                <p>Vamos também instalar como dependência de produção a biblioteca dayjs, que usamos no último exercício:</p>
+                <pre><code>npm install --save dayjs</code></pre>
+                <h3>E agora só precisamos incluir algum código dentro do nosso arquivo “index.js” utilizando o dayjs:</h3>
+                <pre><code>import dayjs from 'dayjs'
+alert(`Hoje é: ${dayjs().format("DD/MM/YYYY")}`)</code></pre>
+                <h2>Tudo pronto. Agora só precisamos rodar o webpack através do comando:</h2>
+                <pre><code>npx webpack</code></pre>
+                <p>Obs.: Repare que ele criou um único arquivo de saída “dist/main.js” com o conteúdo necessário para nossa página funcionar. Mesmo se excluirmos a pasta “node_modules” você verá que a página ainda funciona.</p>
+                <p>Obs².: Repare também que o conteúdo já vem minificado, ou seja, otimizado para ter o menor tamanho possível, removendo tudo que não é essencial para o funcionamento do código, como comentários, espaços, quebras de linha, etc.</p>
+            </article>
+            <section>
+                <article>
+                    <h1>Utilizando Loaders no Webpack</h1>
+                    <p>Como eu expliquei anteriormente, os loaders permitem que nós transformemos os módulos, o que permite que o webpack também seja capaz de entender outros formatos de arquivo além do javascript e do JSON. Vamos instalar dois loaders que nos ajudarão a incluir arquivos CSS no webpack, o style-loader e o css-loader:</p>
+                    <pre><code>npm install --save-dev style-loader css-loader</code></pre>
+                    <h2>Com esses dois pacotes instalados só precisamos configurar o webpack para utilizá-los:</h2>
+                    <pre><code>module.exports = {
+entry: {
+    index: './src/index.js'
+},
+mode: 'development',
+module: {
+    rules: [{
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader']
+    }]
+}
+}</code></pre>
+                      <h2>Com o webpack configurado precisamos incluir o arquivo “style.css” no nosso ponto de entrada. Isso é fundamental para que tudo funcione corretamente:</h2>
+                      <p>Obs.: Repare que ao rodar agora o npx webpack o “bundle.min.js” continua sendo o único arquivo de saída, porém ao acessar a página no navegador ela já terá o fundo escuro.</p>
+                      <pre><code>import dayjs from 'dayjs'
+import './styles/style.css'
+
+alert(`Hoje é: ${dayjs().format("DD/MM/YYYY")}`)</code></pre>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h1>Utilizando Plugins no Webpack</h1>
+                    <p>1. Para essa aula continuaremos a utilizar a pasta das aulas anteriores sobre webpack.
+                    <p>2. Para utilizar um plugin no webpack precisamos primeiro instalar o pacote do plugin como dependência de desenvolvimento. Iremos utilizar nessa aula o plugin “mini-css-extract-plugin”, que é um plugin para extrair o CSS incluindo no ponto de entrada em um arquivo separado do nosso arquivo javascript. Comece instalando o plugin:</p>
+                    <p>Obs.: Para mais plugins visite https://webpack.js.org/plugins/</p>
+                    <pre><code>npm install --save-dev mini-css-extract-plugin</code></pre>
+                    <h2>Agora que já instalamos o plugin, precisamos ajustar as configurações do webpack para incluir o plugin e utilizá-lo nos arquivos CSS:</h2>
+                    <p>Obs.: Repare que para esse plugin isso ocorre em duas etapas, primeiro incluímos a instância da classe MiniCssExtractPlugin no array “plugins”, e então substituímos o “style-loader” pelo loader do plugin (porque agora não iremos carregar estilos com o javascript e sim incluir estilos em um css separado)</p>
+                    <pre><code>
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+  entry: {
+    index: './src/index.js'
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist')
+  },
+  mode: 'development',
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [MiniCssExtractPlugin.loader, 'css-loader']
+    }]
+  },
+  plugins: [
+    new MiniCssExtractPlugin()
+  ]
+}
+                    </code></pre>
+                    <h2>Por fim, só precisamos ajustar o arquivo index.html para incluir o novo arquivo css que geramos:</h2>
+                    <pre><code>link css [...]</code></pre>
+                </article>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

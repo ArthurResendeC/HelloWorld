@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inicialização do babel e informações sobre o NPM</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Usando o Babel</h1>
+        </header>
+        <section>
+            <article>
+                <h2>Vamos começar inicializando um novo projeto NPM:</h2>
+                <pre><code>npm init -y</code></pre>
+                <h2>Depois precisamos instalar os módulos que compõem o Babel:</h2>
+                <pre><code>npm install --save-dev @babel/core @babel/cli @babel/preset-env</code></pre>
+                <p>Note que, ao invés de utilizarmos o <code>--save-dev</code>, poderíamos usar o atalho
+                    <code>-D</code>, que para o NPM significa a mesma coisa: coloca o pacote a ser instalado como uma
+                    dependência de desenvolvimento e que não será enviada à versão do cliente.
+                </p>
+            </article>
+            <article>
+                <h2>Com eles instalados, vamos copiar o conteúdo da resolução do exercício 14, onde utilizando diversos
+                    recursos modernos do javascript, para um arquivo “index.js”:</h2>
+                <pre>
+                    <code>
+const average = (...numbers) => {
+const sum = numbers.reduce((accum, num) => accum + num, 0)
+  return sum / numbers.length
+}
+
+console.log(`Média Simples: ${average(3, 6, 10, 9)}`)
+
+const weightedAverage = (...entries) => {
+const sum = entries.reduce((accum, { number, weight }) => accum + (number * weight), 0)
+const weightSum = entries.reduce((accum, entry) => accum + entry.weight, 0)
+  return sum / weightSum
+}
+
+console.log(`Média Ponderada: ${weightedAverage(
+  { number: 9, weight: 3 },
+  { number: 7, weight: 1 },
+  { number: 10, weight: 1 },
+)}`)
+
+const median = (...numbers) => {
+const orderedNumbers = [...numbers].sort((a, b) => a - b)
+const middle = Math.floor(orderedNumbers.length / 2)
+  if (orderedNumbers.length % 2 !== 0) {
+  return orderedNumbers[middle]
+  }
+const firstMedian = orderedNumbers[middle - 1]
+const secondMedian = orderedNumbers[middle]
+  return average(firstMedian, secondMedian)
+}
+
+console.log(`Mediana: ${median(2, 5, 99, 4, 42, 7)}`)
+console.log(`Mediana: ${median(15, 14, 8, 7, 3)}`)
+
+const mode = (...numbers) => {
+  const quantities = numbers.map(number => [
+  number,
+  numbers.filter(n => number === n).length
+  ])
+  quantities.sort((a, b) => b[1] - a[1])
+  return quantities[0][0]
+}
+
+console.log(`Moda: ${mode(1, 1, 5, 4, 9, 7, 4, 3, 5, 2, 4, 0, 4)}`)</code>
+                </pre>
+                <h2>Agora que temos esse arquivo, podemos executar o comando do Babel e ver que ele irá compilar o nosso
+                    código e exibir o resultado no próprio terminal:</h2>
+                <p>Obs.: Repare que aqui ele não fez nenhuma conversão de compatibilidade, pois nós ainda não a
+                    especificamos. Ele apenas fez correções de código, como a inclusão do ; no fim de cada linha e
+                    outros pequenos detalhes que podem gerar algum problema para o nosso código.</p>
+                <pre><code>npx babel index.js</code></pre>
+                <h2>Além de exibir o resultado no terminal, o que não é muito útil, podemos salvar esse resultado em um
+                    arquivo com a flag --out-dir:</h2>
+                <pre><code>npx babel index.js --out-file dist.js</code></pre>
+            </article>
+            <article>
+                <h2>Agora vamos ver como podemos realmente deixar o nosso código compatível com o ES5. </h2>
+                <p>Vamos utilizar para isso o preset-env. No Babel, presets são configurações prontas para casos de uso
+                    comuns, o que nos poupa bastante trabalho de configuração. O @babel/preset-env que nós instalamos é
+                    um preset que fará essa conversão para ES5 por padrão, mas que também é altamente configurável.</p>
+                <p>Por enquanto vamos utilizá-lo da forma padrão. Execute o comando passando a flag --presets:</p>
+                <p>Obs.: Repare que todos aqueles recursos modernos que utilizamos foram modificados para serem
+                    compatíveis com as versões mais antigas.</p>
+                <pre><code>npx babel index.js --out-file dist.js --presets=@babel/preset-env</code></pre>
+                <h2>Além de usar o Babel em um único arquivo também podemos utilizá-lo em pastas inteiras</h2>
+                <p>Crie uma pasta “src” e divida o conteúdo do arquivo index.js em diferentes arquivos dentro dela.</p>
+                <p>Feito isso, execute o comando com a flag --out-dir (ao invés de --out-file):</p>
+                <pre><code>npx babel src --out-dir dist --presets=@babel/preset-env</code></pre>
+                <h2>Por fim, podemos até mesmo escrever um script para executar o Babel de forma mais ágil:</h2>
+                <pre>
+                    <code>
+// package.json
+// ...
+"main": "index.js",
+"scripts": {
+"babel": "babel src --out-dir dist --presets=@babel/preset-env"
+},
+"keywords": [],
+//...</code>
+                </pre>
+                <h2>Agora só precisamos executar o Babel com um comando:</h2>
+                <pre><code>npx run babel</code></pre>
+            </article>
+            <article>
+                <h2>Uma última observação é que nós também podemos configurar o Babel através de arquivos, assim não
+                    precisaremos utilizar as flags no comando.</h2>
+                <p>Ele possui dois tipos de arquivos de configuração: .babelrc e babel.config.js. O babel.config.js é o
+                    arquivo de configuração principal, com ele podemos definir as opções que serão usadas como padrão
+                    pelo Babel. Já o .babelrc permite escrever configurações específicas para diretórios ou partes
+                    específicas dos nossos projetos.</p>
+                <p>Para vermos esse comportamento rapidamente vamos criar o arquivo “babel.config.js” na pasta do
+                    projeto e nele vamos especificar os presets passados através de flag:</p>
+                <pre>
+                    <code>
+// babel.config.js
+module.exports = {
+presets: [
+  [
+    "@babel/preset-env"
+  ]
+]}</code></pre>
+                <h2>Agora podemos remover a flag e executar novamente o comando, e mesmo assim a saída será igual a que
+                    obtivemos antes:</h2>
+                <pre>
+                    <code>
+// package.json
+// ...
+"main": "index.js",
+"scripts": {
+"babel": "babel src --out-dir dist --presets=@babel/preset-env"
+},
+"keywords": [],
+//...</code>
+                </pre>
+                <pre>
+                    <code>
+npm run babel
+                    </code>
+                </pre>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
