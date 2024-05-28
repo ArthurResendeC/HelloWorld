@@ -1,8 +1,8 @@
-const Product = require("./Product")
+const Product = require("./Product");
 
-class Book extends Product {
-    constructor(title,synopsis, genre, pages, author, description, price, inStock = 0){
-        super(`Livro: ${title}`, description,  price, inStock)
+module.exports = class Book extends Product {
+    constructor(title, synopsis, genre, pages, author, description, price, inStock = 0) {
+        super(`Livro: ${title}`, description, price, inStock)
         this.title = title
         this.synopsis = synopsis
         this.genre = genre
@@ -10,5 +10,3 @@ class Book extends Product {
         this.author = author
     }
 }
-
-module.exports = Book
