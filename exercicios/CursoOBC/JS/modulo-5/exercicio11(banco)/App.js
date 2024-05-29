@@ -1,57 +1,50 @@
-const User = require("./entities/User");
+const Deposit = require("./entities/Deposit")
+const Loan = require("./entities/Loan")
+const Transfer = require("./entities/Transfer")
+const User = require("./entities/User")
 
-class App {
+module.exports = class App {
     static #users = []
-    static createUser(fullName, email) {
-        if (this.#findUserByEmail(email)) {
-            console.log(`Email is already in use!`);
-            return null
-        }
-        const user = new User(fullName, email)
-        this.#users.push(user)
-        return user
+
+    static findUser(email) {
+        const user = this.#users.find(user => user.email === email)
+        return user ?? null
     }
 
-    static #findUserByEmail(email) {
-        return this.#users.find(user => user.email === email)
+    static createUser(email, fullname) {
+        const userExists = App.findUser(email)
+        if (!userExists) {
+            this.#users.push(new User(email, fullname))
+        }
     }
 
     static deposit(email, value) {
-        const user = this.#findUserByEmail(email)
+        const user = App.findUser(email)
         if (user) {
-            user.account.deposit(value)
-        } else {
-            console.log("User not found!");
+            const newDeposit = new Deposit(value)
+            user.account.addDeposit(newDeposit)
         }
     }
 
-    static takeLoan(email, value, numInstallments) {
-        const user = this.#findUserByEmail(email)
+    static transfer(fromUserEmail, toUserEmail, value) {
+        const fromUser = App.findUser(fromUserEmail)
+        const toUser = App.findUser(toUserEmail)
+        if (fromUser && toUser) {
+            const newTransfer = new Transfer(fromUser, toUser, value)
+            fromUser.account.addTransfer(newTransfer)
+            toUser.account.addTransfer(newTransfer)
+        }
+    }
+
+    static takeLoan(email, value, numberOfInstallments) {
+        const user = App.findUser(email)
         if (user) {
-            user.account.takeLoan(value, numInstallments)
-        } else {
-            console.log("User not found");
+            const newLoan = new Loan(value, numberOfInstallments)
+            user.account.addLoan(newLoan)
         }
     }
 
-    static transfer(senderEmail, receiverEmail, value) {
-        const sender = this.#findUserByEmail(senderEmail);
-        const receiver = this.#findUserByEmail(receiverEmail);
-        if (sender && receiver) {
-            sender.account.transfer(receiver, value);
-        } else {
-            console.log('Sender or receiver not found!');
-        }
-    }
-
-    static changeLoanInterestRate(newRate) {
-        Loan.changeInterestRate = newRate;
-    }
-
-    static get users(){
-        return this.#users
+    static changeLoanFee(newFeePercentage) {
+        Loan.fee = newFeePercentage
     }
 }
-
-const arthur = App.createUser("Arthur Resende Coura", "arthur.resendec@email.com")
-console.log(App.users);

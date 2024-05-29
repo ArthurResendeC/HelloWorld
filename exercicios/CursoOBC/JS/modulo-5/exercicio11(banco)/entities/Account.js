@@ -1,41 +1,38 @@
-const Deposit = require("./Deposit")
-const Loan = require("./Loan")
-const Transfer = require("./Transfer")
+module.exports = class Account {
+    #balance
+    // #deposits
+    // #loans
+    // #transfers
 
-class Account{
-    #balance = 0
-    constructor(owner){
-        this.owner = owner
+    constructor(user) {
+        this.owner = user
+        this.#balance = 0
         this.deposits = []
         this.loans = []
         this.transfers = []
     }
 
-    get balance(){
+    get balance() {
         return this.#balance
     }
 
-    deposit(value){
-        const deposit = new Deposit(value, new Date())
+    addDeposit(deposit) {
+        this.#balance += deposit.value
         this.deposits.push(deposit)
-        this.#balance += value
     }
 
-    transfer(receiver, value){
-        const transfer = new Transfer(this.owner, receiver, value, new Date())
-        this.transfers.push(transfer)
-        if (this.owner === receiver) {
-            this.#balance += value
-        } else {
-            this.#balance -= value
+    addLoan(loan) {
+        this.#balance = + loan.value
+        this.loans.push(loan)
+    }
+
+    addTransfer(transfer) {
+        if (transfer.toUser.email === this.owner.email) {
+            this.#balance += transfer.value
+            this.transfers.push(transfer)
+        } else if (transfer.fromUser.email === this.owner.email) {
+            this.#balance -= transfer.value
+            this.transfers.push(transfer)
         }
     }
-
-    takeLoan(value, numInstallments){
-        const loan = new Loan(value, new Date(), numInstallments)
-        this.loans.push(loan)
-        this.#balance += value
-    }
 }
-
-module.exports = Account

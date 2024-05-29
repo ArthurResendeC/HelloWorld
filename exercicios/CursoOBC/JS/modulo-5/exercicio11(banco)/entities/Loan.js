@@ -1,22 +1,22 @@
-class Loan{
-    constructor(value, createdOn, installments){
+const Installment = require("./Installment")
+
+module.exports = class Loan {
+    static #fee = 1.05
+
+    constructor(value, installments) {
         this.value = value
-        this.createdOn = createdOn
-        this.installments = installments
-    }
-
-    static #interestRate = 0
-
-    static set changeInterestRate(newRate){
-        if (!isNaN(newRate) && newRate >= 0) {
-            this.#interestRate = newRate * 0.01
-        } else{
-            console.log("The new interest rate presented is not a valid number!");
+        this.installments = []
+        for (let i = 1; i <= installments; i++) {
+            this.installments.push(new Installment((value * Loan.#fee) / installments, i))
         }
+        this.createdAt = new Date()
     }
-    static get readInterestRate(){
-        return this.#interestRate * 100
+
+    static get fee() {
+        return Loan.#fee
+    }
+
+    static set fee(newFeePercentage) {
+        Loan.#fee = 1 + (newFeePercentage / 100)
     }
 }
-
-module.exports = Loan

@@ -1,9 +1,7 @@
-class Installment{
-    constructor(value, currentInstallment, situation){
+module.exports = class Installment {
+    constructor(value, number) {
         this.value = value
-        this.currentInstallment = currentInstallment
-        this.situation = situation
+        this.number = number
+        this.status = 'pending'
     }
 }
-
-module.exports = Installment

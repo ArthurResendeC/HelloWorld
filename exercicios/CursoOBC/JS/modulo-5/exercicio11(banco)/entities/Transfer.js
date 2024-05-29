@@ -1,10 +1,8 @@
-class Transfer{
-    constructor(user, receiver, value, createdOn){
-        this.user = user
-        this.receiver = receiver
+module.exports = class Transfer {
+    constructor(fromUser, toUser, value) {
+        this.fromUser = fromUser
+        this.toUser = toUser
         this.value = value
-        this.createdOn = createdOn
+        this.createdAt = new Date()
     }
 }
-
-module.exports = Transfer
