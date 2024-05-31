@@ -1,8 +1,10 @@
+const Carrinho = require("./Carrinho")
+
 class Usuario{
-    constructor(nome, email, carrinho){
+    constructor(nome, email){
         this.nome = nome
         this.email = email
-        this.carrinho = carrinho //instância de carrinho!
+        this.carrinho = new Carrinho //instancia um carrinho!
     }
 
     adicionarAoCarrinho(produto, qtd){
@@ -16,6 +18,7 @@ class Usuario{
     visualizarCarrinho(){
         return this.carrinho.visualizarCarrinho()
     }
+
     finalizarCompra(){
         const tentativa = this.carrinho.finalizarCompra()
         if (tentativa) {
