@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="https://unpkg.com/scrollreveal"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/index.css">
   <title>Desafio 1</title>
 </head>
-<body>
+
+<body class="font-primaryFont">
   <header>
     <div id="header">
       <div id="heading">
-        <h1>Codelândia</h1>
+        <h1 class="text-pink-400">Codelândia</h1>
         <a href="#">Blog</a>
       </div>
       <form>
@@ -28,12 +30,14 @@
   <main>
     <section>
       <article>
-        <div class="articleDate">
+        <div class="">
           <p>02 de jul, 2021</p>
           <img src="./images/heart.svg" alt="">
         </div>
         <h3 class="titles">Agora é oficial: o Windows 11 está vindo</h3>
-        <p class="textContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus veritatis quo laboriosam quibusdam distinctio vel. Quidem dolores velit nisi sapiente maxime voluptatem harum voluptates.</p>
+        <p class="textContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus veritatis quo
+          laboriosam quibusdam distinctio vel. Quidem dolores velit nisi sapiente maxime voluptatem harum voluptates.
+        </p>
       </article>
       <article>
         <div class="articleDate">
@@ -41,7 +45,9 @@
           <img src="./images/heart.svg" alt="">
         </div>
         <h3 class="titles">Tim Berners-Lee vai leiloar código-fonte da web</h3>
-        <p class="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit lectus libero, id efficitur arcu viverra ac. Etiam sed sagittis velit, vitae convallis turpis. Praesent in purus non tellus tincidunt fermentum eu at sem. Curabitur lacus libero.</p>
+        <p class="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit lectus libero, id
+          efficitur arcu viverra ac. Etiam sed sagittis velit, vitae convallis turpis. Praesent in purus non tellus
+          tincidunt fermentum eu at sem. Curabitur lacus libero.</p>
       </article>
       <article>
         <div class="articleDate">
@@ -50,7 +56,8 @@
         </div>
         <h3 class="titles">Tem Firefox novo no pedaço e você vai
           querer migrar</h3>
-          <p class="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor est.</p>
+        <p class="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor
+          est.</p>
       </article>
       <article>
         <div class="articleDate">
@@ -58,13 +65,13 @@
           <img src="./images/heart.svg" alt="">
         </div>
         <h3 class="titles">John MCAfee, criador do antivírus McAfee, morre</h3>
-        <p class="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit lectus libero, id efficitur arcu viverra ac. Etiam sed sagittis velit, vitae convallis turpis. Praesent in purus non tellus tincidunt fermentum eu at sem. Curabitur lacus libero.</p>
+        <p class="textContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit lectus libero, id
+          efficitur arcu viverra ac. Etiam sed sagittis velit, vitae convallis turpis. Praesent in purus non tellus
+          tincidunt fermentum eu at sem. Curabitur lacus libero.</p>
       </article>
     </section>
   </main>
-  <script type="module">
-    ScrollReveal().reveal('.titles',{delay: 150})
-    ScrollReveal().reveal('.textContent', {delay:250})
-  </script>
+  <script type="module" src="index.js"></script>
 </body>
+
 </html>

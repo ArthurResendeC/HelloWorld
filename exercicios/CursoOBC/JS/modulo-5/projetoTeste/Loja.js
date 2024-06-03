@@ -62,15 +62,13 @@ const user2 = loja.registrarUsuario("John Doe", "doejohn@email.com")
 
 const produto1 = loja.adicionarProduto("PS4", 2400, "Video-game", 3)
 const produto2 = loja.adicionarProduto("PS5", 3700, "Video-game", 3)
-loja.listarProdutosDisponiveis()
-produto2.detalhesProduto()
 
-user1.carrinho.adicionarProduto(produto1, 1);
-user1.carrinho.adicionarProduto(produto1, 1);
-user2.carrinho.adicionarProduto(produto2, 1)
+user1.adicionarAoCarrinho(produto1, 1)
+user1.adicionarAoCarrinho(produto1, 1)
+user2.adicionarAoCarrinho(produto2, 1)
 
-user1.carrinho.finalizarCompra()
+user1.finalizarCompra()
 user2.finalizarCompra()
 
-produto1.detalhesProduto()
-produto2.detalhesProduto()
+loja.listarUsuarios()
+loja.listarProdutosDisponiveis()
