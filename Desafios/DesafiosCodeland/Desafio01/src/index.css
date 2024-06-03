@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .searchInput{
+        @apply w-full h-10 rounded-lg py-4 font-secondaryFont bg-semiTransparent text-white border-none placeholder:text-opacity-75 placeholder:text-white   ps-8 focus-visible:outline-none 
+    }
+    .article{
+        @apply p-4 bg-white rounded-xl w-11/12 my-4 mx-auto lg:w-1/2 lg:mx-auto
+    }
+    .articleDate{
+        @apply flex my-4 text-OtherGrey items-center justify-between
+    }
+    .textContent{
+        @apply my-4 text-OtherGrey text-justify
+    }
+    .heart{
+        @apply w-7 h-7 hover:cursor-pointer
+    }
+}
