@@ -1,11 +1,8 @@
-import { Random } from "random-js";
 
 const botao = document.getElementById("botaoAdicionar");
 const botaoGerar = document.getElementById("botaoGerar");
 const mensagem = document.getElementById("mensagemCarrinho");
 const paragrafoNumero = document.getElementById("randomNumber");
-const random = new Random();
-
 botao.addEventListener("click", function () {
   mensagem.style.display = "block";
   setTimeout(function () {
@@ -18,7 +15,7 @@ let numeroGerados = 1;
 let intervaloID;
 
 function gerarNumeros(quantidade = 10) {
-  const value = random.integer(1, 999999);
+  const value = (Math.random() * 999).toFixed(3);
   let valueString = value.toString();
   while (valueString.length < 6) {
     valueString = "0" + valueString;
