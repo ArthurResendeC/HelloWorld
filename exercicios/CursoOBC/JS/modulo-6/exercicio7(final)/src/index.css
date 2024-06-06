@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .input{
+        @apply outline-slate-500 bg-slate-300 text-gray-900 rounded-md placeholder:text-slate-500 p-2
+    }
+    .label{
+
+    }
+    .saveB{
+        @apply p-2 my-2 text-white font-bold bg-green-600 rounded-md hover:bg-green-700
+    }
+    .delB{
+        @apply p-1 my-2 text-white font-bold bg-red-600 rounded-md hover:bg-red-700
+    }
+    .edtB{
+        @apply p-1 my-2 text-white font-bold bg-gray-600 rounded-md hover:bg-slate-700
+    }
+    .transaction{
+        @apply flex flex-col bg-slate-300 p-4 rounded-2xl 
+    }
+    .transactionTitle{
+        @apply text-xl font-semibold
+    }
+    .tDiv{
+        @apply p-4 flex gap-8 flex-wrap
+    }
+    .editForm{
+        @apply flex flex-col p-6 gap-1 w-2/5
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/index.css">
+  <title>Exercício Final</title>
+</head>
+<body>
+  <header>
+    <h1 class="px-6 pt-4 font-bold underline text-2xl">Gestor de transações:</h1>
+  </header>
+  <main class="flex flex-col gap-4 m-6">
+    <form>
+      <label for="name">Identificação:</label>
+      <br>
+      <input class="input" type="text" name="name" id="name" placeholder="Mercearia" autocomplete="off" required>
+      <br>
+      <label for="value">Valor:</label>
+      <br>
+      <input class="input" type="number" name="value" id="value" autocomplete="off" placeholder="59,00" required>
+      <br>
+      <button class="saveB">Salvar</button>
+    </form>
+    <section class="">
+      <article>
+        <div class="flex items-end gap-6">
+          <h2 class="font-semibold text-3xl">Saldo: </h2><span class="text-2xl" id="balance"></span>
+        </div>
+        <h2 class="font-semibold text-3xl">Transações:</h2>
+        <div id="transactionsDiv" class="tDiv"></div>
+      </article>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

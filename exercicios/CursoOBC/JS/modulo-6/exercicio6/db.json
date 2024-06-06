@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Olá, mundo!",
+      "content": "Lorem ipsum dolor sit amet consecteur adispcing elit.",
+      "author": "Isaac Pontes"
+    },
+    {
+      "id": "2",
+      "title": "Olá, requisições JS!",
+      "content": "Lorem ipsum dolor sit amet consecteur adispcing elit.",
+      "author": "Luana de Oliveira"
+    },
+    {
+      "id": "65e4",
+      "title": "Titulo",
+      "author": "autro",
+      "content": "outro"
+    }
+  ]
+}
