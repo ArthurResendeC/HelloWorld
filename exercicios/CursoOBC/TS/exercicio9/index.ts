@@ -44,7 +44,7 @@ const fetchGitHubUser = async (username: string | null) => {
 function removeUser(username: string | null) {
     if (username !== null) {
         users = users.filter((u) => u.login !== username)
-        usersRepos = usersRepos.filter((_,index) => users[index].login !== username)
+        alert(`O usuário "${username}" foi removido com sucesso!`)
     } else {
         alert("Insira um nome de usuário válido!")
     }
@@ -52,13 +52,16 @@ function removeUser(username: string | null) {
 
 
 function showUsers() {
-    const usersShown = users.map(item => `Nome:${item.name}\nbio: ${item.bio}\nNúmero de repositórios: ${item.public_repos}\n\n`).join('')  
+    const usersShown = users.map(item => `Nickname: ${item.login}\nNome: ${item.name}\nbio: ${item.bio}\nNúmero de repositórios: ${item.public_repos}\n\n`).join('')  
     alert(usersShown)
 }
 
 function seeUserRepos(username:string|null) {
+    if (users.length === 0) {
+        alert(`Não existem usuários na lista de usuários requisitados!`)
+    }
     if (username!==null) {
-        const findingUser = users.findIndex(u => u.name === username)
+        const findingUser = users.findIndex(u => u.login === username)
         if (findingUser!==-1) {
             const repos = usersRepos[findingUser]
             const reposMessage = repos.map(repo => `Nome: ${repo.name}\nDescrição: ${repo.description}\n\n`).join('')
@@ -74,7 +77,7 @@ function seeUserRepos(username:string|null) {
 function reposSum() {
     let reposNum:number = 0
     users.forEach(u => reposNum += u.public_repos)
-    alert(`A soma dos repositórios de todos os usuários é ${reposNum}`)
+    alert(`A soma dos repositórios de todos os usuários requisitados é ${reposNum}`)
 }
 
 function sortByRepos() {
@@ -82,10 +85,9 @@ function sortByRepos() {
         alert("Não existem usuários o suficiente para fazer comparações quanto a número de repositórios!")
         return
     }
-    let usersCopy = [...users]
-    usersCopy.sort((a,b)=> b.public_repos - a.public_repos)
-    alert(`Os usuários ordenados daquele que tem mais repositórios pro que tem menos é:
-        ${usersCopy.map(item => `Nome:${item.name}\nbio: ${item.bio}\nNúmero de repositórios: ${item.public_repos}\n\n`).join('')}`)
+    let usersCopy = [...users].sort((a,b)=> b.public_repos - a.public_repos).slice(0,5)
+    alert(`O top 5 dos usuários requisitados que tem mais repositórios é:
+        ${usersCopy.map(item => `Nickname: ${item.login}\nNome: ${item.name}\nbio: ${item.bio}\nNúmero de repositórios: ${item.public_repos}\n\n`).join('')}`)
 }
 
 let userOption: number = 0
@@ -97,7 +99,7 @@ while (userOption !== 7) {
     3 - Remover um usuário da lista de usuários requisitados
     4 - Ver repositórios de um dos usuários requisitados
     5 - Ver a soma de repositórios dos usuários presentes na lista de requisitados
-    6 - Ver os usuários requisitados por ordem crescente de número de repositórios
+    6 - Ver o ranking de usuários com mais repositórios
     7 - Sair
   `
     userOption = Number(prompt(menu))
