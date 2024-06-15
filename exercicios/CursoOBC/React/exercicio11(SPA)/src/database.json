@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name": "Intel core i9",
+        "description": "High performance processor with 8 cores and 16 threads. It feats a a base clock speed of 3.5GHz and can reach up to 5.3GHz with Intel Turbo Boost Max Technology 3.0.",
+        "price": 299.99
+    },
+    {
+        "id":2,
+        "name": "AMD Ryzen 9",
+        "description": "High performance processor with 16 cores and 32 threads. It feats a a base clock speed of 3.4GHz and can reach up to 4.9GHz .",
+        "price": 499.90
+    },
+    {
+        "id": 3,
+        "name": "Cosair whatever",
+        "description": "Lorem ipsum dolor sit amet consecteur",
+        "price": 344.25
+    },
+    {
+        "id": 4,
+        "name": "Snapdragon whatever",
+        "description": "Lorem ipsum dolor sit amet consecteur",
+        "price": 599.00
+    },
+    {
+        "id": 5,
+        "name": "Crucial whatever",
+        "description": "Lorem ipsum dolor sit amet consecteur",
+        "price": 799.00
+    }
+]
