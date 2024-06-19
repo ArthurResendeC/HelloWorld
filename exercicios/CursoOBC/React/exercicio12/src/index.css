@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+.dark-theme{
     @apply bg-neutral-700 text-white
 }

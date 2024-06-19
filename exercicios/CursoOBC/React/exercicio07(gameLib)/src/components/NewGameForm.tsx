@@ -25,8 +25,8 @@ export default function NewGameForm({ addGame }: NewGameFormProps) {
                 name="title"
                 type="text"
                 placeholder="God of war"
-                labelFor="title"
-                labelText="Título:"
+                labelfor="title"
+                labeltext="Título:"
             />
             <MyInput
                 value={cover}
@@ -34,8 +34,8 @@ export default function NewGameForm({ addGame }: NewGameFormProps) {
                 name="cover"
                 type="text"
                 placeholder="url/kratos.png"
-                labelFor="cover"
-                labelText="Capa:"
+                labelfor="cover"
+                labeltext="Capa:"
             />
             <ActionBtn
                 text="Adicionar jogo"

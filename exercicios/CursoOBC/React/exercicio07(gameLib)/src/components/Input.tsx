@@ -1,8 +1,8 @@
 import React from "react";
 
 interface MyInputLabel extends React.InputHTMLAttributes<HTMLInputElement> {
-    labelFor: string
-    labelText: string
+    labelfor: string
+    labeltext: string
 }
 
 export default function MyInput(props: MyInputLabel) {
@@ -10,9 +10,9 @@ export default function MyInput(props: MyInputLabel) {
         <div className="flex flex-col gap-2">
             <label
                 className="text-3xl"
-                htmlFor={props.labelFor}
+                htmlFor={props.labelfor}
             >
-                {props.labelText}
+                {props.labeltext}
             </label>
             <input
                 {...props}
