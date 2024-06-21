@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import { ToastProvider } from "@radix-ui/react-toast";
+import { CartContextProvider } from "@/hooks/useCart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,10 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={inter.className}>
         <Header />
-        <main>{children}</main>
+        <CartContextProvider>
+          <main>{children}</main>
+        </CartContextProvider>
+
         <Toaster />
       </body>
     </html>

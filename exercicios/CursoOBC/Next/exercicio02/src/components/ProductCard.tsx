@@ -25,7 +25,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 </Link>
                 <p>R${price}</p>
             </div>
-            <CartButton/>
+            <CartButton product={product}/>
         </div>
     )
 }

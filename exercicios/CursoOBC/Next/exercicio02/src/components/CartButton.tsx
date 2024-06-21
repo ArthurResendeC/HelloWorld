@@ -1,11 +1,21 @@
+'use client'
+import { useCart } from "@/hooks/useCart"
 import { useToast } from "./ui/use-toast"
+import { ProductType } from "@/services/products"
 
-export default function CartButton() {
+interface CartButtonProps{
+    product:ProductType
+}
+
+export default function CartButton(props: CartButtonProps ) {
     const { toast } = useToast()
+    const { addProduct } = useCart()
 
     function handleClick() {
+        addProduct(props.product)
         toast({
-            description: 'Produto adicionado ao carrinho com sucesso!'
+            description: 'Produto adicionado ao carrinho com sucesso!',
+            variant: 'custom'
         })
     }
     return (
