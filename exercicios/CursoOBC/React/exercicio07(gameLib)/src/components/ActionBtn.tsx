@@ -1,4 +1,6 @@
-interface ActionBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import { ComponentProps } from "react";
+
+interface ActionBtnProps extends ComponentProps<'button'> {
     text: string;
     byclick?: (id: number) => void;
   }
