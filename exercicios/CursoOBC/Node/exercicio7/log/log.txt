@@ -1,0 +1,5 @@
+Sistema operacional: Windows_NT;
+Arquitetura: x64;
+Processador: Intel(R) Core(TM) i3-7020U CPU @ 2.30GHz;
+Tempo de atividade: 97.92 min;
+Memória RAM utilizada: 84.49%
