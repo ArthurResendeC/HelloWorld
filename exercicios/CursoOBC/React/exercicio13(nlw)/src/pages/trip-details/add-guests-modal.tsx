@@ -38,7 +38,7 @@ export function AddGuestsModal({ closeAddGuestsModal }: InviteGuestsModalProps) 
             <div className='w-[640px] rounded-xl shadow-shape bg-zinc-900  py-4 px-6 space-y-5'>
                 <div className='space-y-2'>
                     <div className='flex items-center justify-between'>
-                        <h2 className='text-lg font-semibold'>Selecionar convidados</h2>
+                        <h2 className='text-lg font-semibold'>Adicionar convidados</h2>
                         <button onClick={closeAddGuestsModal}><X className='size-5 text-400' /></button>
                     </div>
                     <p className='text-sm text-zinc-400'>

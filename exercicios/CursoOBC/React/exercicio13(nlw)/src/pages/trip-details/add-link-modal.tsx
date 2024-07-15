@@ -34,11 +34,11 @@ export function AddLinkModal({ closeAddLinkModal }: AddlinkModalProps) {
             <div className='w-[640px] rounded-xl shadow-shape bg-zinc-900  py-4 px-6 space-y-5'>
                 <div className='space-y-2'>
                     <div className='flex items-center justify-between'>
-                        <h2 className='text-lg font-semibold'>Alterar local/data</h2>
-                        <button onClick={closeAddLinkModal}><X className='size-5 text-400' /></button>
+                        <h2 className='text-lg font-semibold'>Adicionar link</h2>
+                        <button onClick={closeAddLinkModal}><X className='size-5 text-400'/></button>
                     </div>
                     <p className='text-sm text-zinc-400'>
-                        Introduza as novas informações da viagem:
+                        Introduza as informações do link:
                     </p>
                 </div>
 

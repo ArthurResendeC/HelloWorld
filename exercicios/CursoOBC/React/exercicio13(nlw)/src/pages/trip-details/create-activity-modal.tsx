@@ -37,7 +37,7 @@ export function CreateActivityModal({ closeCreateACtivityModal }: CreateActivity
                         <button onClick={closeCreateACtivityModal}><X className='size-5 text-400' /></button>
                     </div>
                     <p className='text-sm text-zinc-400'>
-                        todos os convidados podem visualizar os detalhes
+                        Todos os convidados podem visualizar os detalhes
                     </p>
                 </div>
 
