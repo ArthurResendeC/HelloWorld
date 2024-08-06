@@ -9,6 +9,10 @@ const secretKey = 'minha-chave-secreta' // dasij21i0j321hd78dysa9120ejjd0sf973yr
 authRouter.post('/register', (req, res)=>{
     const { username, email, password } = req.body
 
+    if (typeof username !== 'string' || typeof email !== 'string' || typeof password !== 'string') {
+        return res.status(400).json({message: "Invalid register inputs!"})
+    }
+
     const existingUser = users.find(user => user.email === email)
     const existingUsername = users.find(user => user.username === username)
     if (existingUser) {
@@ -27,6 +31,10 @@ authRouter.post('/register', (req, res)=>{
 
 authRouter.post('/login', (req, res)=>{
     const {email, password} = req.body
+
+    if (typeof email !== 'string' || typeof password !== 'string') {
+        return res.status(400).json({message: "Invalid login inputs!"})
+    }
 
     const user = users.find(user => user.email === email)
     if (!user || user.password !== password) {

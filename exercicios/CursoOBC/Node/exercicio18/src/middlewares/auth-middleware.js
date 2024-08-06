@@ -7,7 +7,7 @@ const authMiddleware = (req, res, next) =>{
     const authHeader = req.headers.authorization
 
     if (authHeader === undefined | null) {
-        return res.status(401).json({message: "Access denied! Authorization required"})
+        next()
     }
 
     const token = authHeader.split(' ')[1]
