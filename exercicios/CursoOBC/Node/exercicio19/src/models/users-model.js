@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt')
 const users = [
     { id: '1', name: 'Isaac Pontes', email: 'isaac.pontes@email.com', password: '123456' },
     { id: '2', name: 'John Doe', email: 'john.doe@email.com', password: '123456' }
-
 ] 
 
 module.exports = {

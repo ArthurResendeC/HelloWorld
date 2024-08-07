@@ -39,5 +39,12 @@ module.exports = {
         const payload = {id: user.id, email: user.email}
         const token = jwt.sign( payload, process.env.JWT_KEY, { expiresIn: '1d' })
         res.json({token})
-    }
+    },
+
+    // GET /auth/users
+    getUsers:(req, res)=>{
+        const users = usersModel.getAllUsers()
+        console.log(users);
+        res.json(users)
+    } 
 }
