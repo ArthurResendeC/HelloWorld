@@ -1,6 +1,7 @@
 const { Client } = require("pg")
 const { query, getClient } = require("../database")
 const Product = require("./Product")
+const Customer = require("./Customers")
 
 class Order {
     constructor(order_row, populate_costumer, populate_products) {
@@ -109,17 +110,24 @@ class Order {
             WHERE order_products.order_id = $1;`,
             [id]
         )
-
-        const orderData = orderResult.rows[0]
+        
         const customer = new Customer({
-            id: orderData["customer.id"],
-            name: orderData["customer.name"],
-            email: orderData["customer.email"],
-            created_at: orderData["customer.created_at"],
-            updated_at: orderData["customer.updated_at"]
-        })
+            id: orderResult[0]["customer.id"],
+            name: orderResult[0]["customer.name"],
+            email: orderResult[0]["customer.email"],
+            created_at: orderResult[0]["customer.created_at"],
+            updated_at: orderResult[0]["customer.updated_at"]
+        })    
 
-        return new Order(orderData, customer, orderProductsResult.rows)
+        const orderResultData = {
+            id: +orderResult[0].id,
+            customer_id: +orderResult[0].customer_id,
+            total: +orderResult[0].total,
+            created_at: new Date(orderResult[0].created_at),
+            updated_at: new Date(orderResult[0].updated_at)
+        }
+        
+        return new Order(orderResultData, customer, orderProductsResult[0])
     }
 
     static async delete(id) {
@@ -127,8 +135,8 @@ class Order {
         let result
         try {
             await dbClient.query("BEGIN")
-            await dbClient.query(`DELETE FROM order_products WHERE order_id = $1;`, [id])
-            await dbClient.query(`DELETE FROM orders WHERE id = $1`, [id])
+            await dbClient.query(`DELETE FROM order_products WHERE order_id = $1;`, [+id])
+            await dbClient.query(`DELETE FROM orders WHERE id = $1`, [+id])
             await dbClient.query("COMMIT")
             result = { message: "Order deleted successfully" }
         } catch (error) {
