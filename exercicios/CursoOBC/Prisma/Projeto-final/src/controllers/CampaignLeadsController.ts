@@ -1,7 +1,7 @@
 import { Handler } from "express";
 import { prisma } from "../database";
 import { Prisma } from "@prisma/client";
-import { AddLeadRequestSchema, GetCampaignLeadsRequestSchema, UpdateCampaignLeadsRequestSchema } from "./schemas/campaignRequestSchema";
+import { GetCampaignLeadsRequestSchema, UpdateCampaignLeadsRequestSchema } from "./schemas/campaignRequestSchema";
 
 export class CampaignLeadsController {
     getLeads: Handler = async (req, res, next) => {
@@ -58,16 +58,14 @@ export class CampaignLeadsController {
 
     addLead: Handler = async (req, res, next) => {
         try {
-            const body = AddLeadRequestSchema.parse(req.body)
             await prisma.leadCampaign.create({
                 data: {
                     campaignId: Number(req.params.campaignId),
-                    leadId: body.leadId,
-                    status: body.status
+                    leadId: Number(req.params.leadId)
                 }
             })
 
-            res.status(201).end()
+            res.status(201).json({Message: "Lead adicionado com sucesso à campanha."})
         } catch (error) {
             next(error)
         }

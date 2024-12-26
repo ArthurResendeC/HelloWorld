@@ -3,14 +3,15 @@ import { z } from "zod";
 export const LeadStatusSchema = z.enum([
     "New",
     "Engaged",
-    "FllowUp_Scheduled",
+    "FollowUp_Scheduled",
     "Contacted",
     "Qualified",
     "Converted",
     "Unresponsive",
     "Disqualified",
     "Re_engaged",
-    "Opted_Out"
+    "Opted_Out",
+    "Archived"
 ])
 
 export const GetLeadsRequestSchema = z.object({

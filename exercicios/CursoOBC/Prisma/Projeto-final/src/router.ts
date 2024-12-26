@@ -33,7 +33,7 @@ router.put("/campaigns/:id", campaignsController.update)
 router.delete("/campaigns/:id", campaignsController.delete)
 
 router.get("/campaigns/:campaignId/leads", campaignLeadsController.getLeads)
-router.post("/campaigns/:campaignId/leads", campaignLeadsController.addLead)
+router.post("/campaigns/:campaignId/leads/:leadId", campaignLeadsController.addLead)
 router.put("/campaigns/:campaignId/leads/:leadId", campaignLeadsController.updateleadStatus)
 router.delete("/campaigns/:campaignId/leads/:leadId", campaignLeadsController.removeLead)
 

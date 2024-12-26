@@ -15,14 +15,12 @@ datasource db {
 
 enum LeadStatus {
   New
-  FllowUp_Scheduled
   Contacted
   Converted
   Unresponsive
   Qualified
   Disqualified
-  Re_engaged
-  Opted_Out
+  Archived
 }
 
 model Group {
@@ -49,14 +47,14 @@ model Campaign {
   name        String         @db.VarChar(255)
   description String
   startDate   DateTime
-  enDate      DateTime?
+  endDate     DateTime?
   leads       LeadCampaign[]
 }
 
 enum LeadCampaignStatus {
   New
   Engaged
-  FllowUp_Scheduled
+  FollowUp_Scheduled
   Contacted
   Converted
   Unresponsive
