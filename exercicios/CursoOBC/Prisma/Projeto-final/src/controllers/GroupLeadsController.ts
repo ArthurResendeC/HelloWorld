@@ -2,7 +2,6 @@ import { Handler } from "express"
 import { prisma } from "../database"
 import { GetGroupLeadsRequestSchema } from "./schemas/groupsRequestSchema"
 import { LeadStatus, Prisma } from "@prisma/client"
-import { AddLeadRequestSchema } from "./schemas/campaignRequestSchema"
 
 export class GroupLeadsController {
     index: Handler = async (req, res, next) => {
