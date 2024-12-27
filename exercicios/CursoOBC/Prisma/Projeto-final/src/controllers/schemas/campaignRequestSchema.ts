@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { LeadStatusSchema } from "./leadsRequestsSchema";
+import { LeadCampaignStatusSchema, LeadStatusSchema } from "./leadsRequestsSchema";
 
 export const CampaignRequestSchema = z.object({
     name: z.
@@ -32,7 +32,7 @@ export const GetCampaignLeadsRequestSchema = z.object({
     page: z.string().optional(),
     pageSize: z.string().optional(),
     name: z.string().optional(),
-    status: LeadStatusSchema.optional(),
+    status: LeadCampaignStatusSchema.optional(),
     sortBy: z.enum(["name", "createdAt"]).optional(),
     order: z.enum(["asc", "desc"]).optional()
 })

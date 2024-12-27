@@ -14,6 +14,20 @@ export const LeadStatusSchema = z.enum([
     "Archived"
 ])
 
+export const LeadCampaignStatusSchema = z.enum([
+    "New",
+    "Engaged",
+    "FollowUp_Scheduled",
+    "Contacted",
+    "Qualified",
+    "Converted",
+    "Unresponsive",
+    "Disqualified",
+    "Re_engaged",
+    "Opted_Out",
+    "Archived"
+])
+
 export const GetLeadsRequestSchema = z.object({
     page: z.string().optional(),
     pageSize: z.string().optional(),
