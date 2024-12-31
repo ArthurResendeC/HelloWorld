@@ -25,8 +25,8 @@ export const LeadCampaignStatusSchema = z.enum([
 ])
 
 export const GetLeadsRequestSchema = z.object({
-    page: z.string().optional(),
-    pageSize: z.string().optional(),
+    page: z.number().optional(),
+    pageSize: z.number().optional(),
     name: z.string().optional(),
     status: LeadStatusSchema.optional(),
     sortBy: z.enum(["name", "status", "createdAt"]).optional(),
