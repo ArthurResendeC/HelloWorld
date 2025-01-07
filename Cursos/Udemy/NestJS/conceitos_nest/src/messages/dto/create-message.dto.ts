@@ -1,16 +1,16 @@
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsNotEmpty, IsPositive, IsString, MaxLength } from 'class-validator';
 
 export class CreateMessageDto {
   @IsString()
   @IsNotEmpty()
   @MaxLength(255)
   readonly text: string;
-  @IsString()
+
+  @IsPositive()
   @IsNotEmpty()
-  @MaxLength(255)
-  readonly from: string;
-  @IsString()
+  readonly fromId: number;
+
+  @IsPositive()
   @IsNotEmpty()
-  @MaxLength(255)
-  readonly to: string;
+  readonly toId: number;
 }
