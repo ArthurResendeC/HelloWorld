@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Main /> should render the heading 1`] = `
-<main>
+<main
+  class="bg-slate-700 text-white w-full h-full flex flex-col text-center justify-center items-center p-3"
+>
   <h1>
     React Avançado
   </h1>
