@@ -1,0 +1,16 @@
+principal Admin;
+principal Funcionario;
+principal Consultores;
+principal Clientes;
+
+policy "Controle de Acesso Documentos Empresa"
+        allow Admin access documentosEmpresa
+        deny Funcionario access documentosEmpresa
+        deny Consultor access documentosEmpresa
+        deny Cliente access documentosEmpresa
+
+policy "Controle de Acesso Documentos Cliente"
+        allow Admin access documentosCliente
+        allow Funcionario access documentosCliente
+        deny Consultor access documentosCliente
+        allow Cliente access documentosCliente
